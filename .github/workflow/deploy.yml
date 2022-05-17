@@ -1,0 +1,26 @@
+name: deploy
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '17'
+        cache: 'npm'
+    - run: npm install
+    - run: rm -rf build/site && npx antora --fetch antora-playbook.yml
+    - run: |
+        git config --global user.name 'wrensecurity'
+        git config --global user.email 'wrensecurity@users.noreply.github.com'
+        cd build/site
+        git init && git checkout -b main
+        git add -A
+        git commit -m 'Deploy ${{ github.sha }}'
+        git push -f https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/WrenSecurity/docs.wrensecurity.org.git main:gh-pages

@@ -1,0 +1,16 @@
+site:
+  title: Wren Security Docs
+  url: https://docs.wrensecurity.org
+  start_page: wrenidm::index.adoc
+content:
+  sources:
+  - url: https://github.com/WrenSecurity/wrenidm-docs.git
+    branches: HEAD
+urls:
+  latest_version_segment: latest
+  latest_version_segment_strategy: redirect:to
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+  supplemental_files: ./antora-ui
