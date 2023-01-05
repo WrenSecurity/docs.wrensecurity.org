@@ -1,0 +1,6 @@
+name: docs
+title: Wren Security
+version: default
+start_page: ROOT:index.adoc
+nav:
+- modules/ROOT/nav.adoc

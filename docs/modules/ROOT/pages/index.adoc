@@ -1,0 +1,5 @@
+= Welcome to Wren Security Documentation Portal
+
+To view documentation for a specific project use _Project_ dropdown in the top right corner.
+
+NOTE: Documentation is work-in-progress.
