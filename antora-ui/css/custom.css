@@ -1,3 +1,25 @@
+html {
+  font-size: 17px;
+}
+
+.doc {
+  max-width: 1024px;
+}
+
+.doc > h1.page:first-child {
+  margin-top: 1.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .doc {
+    margin-inline: 1.5rem;
+  }
+
+  .doc > h1.page:first-child {
+    margin-top: 2rem;
+  }
+}
+
 footer p {
-    text-align: center;
+  text-align: center;
 }
