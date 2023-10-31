@@ -1,5 +1,28 @@
-= Welcome to Wren Security Documentation Portal
+= Wren Security Documentation Portal
 
-To view documentation for a specific project use _Project_ dropdown in the top right corner.
+Welcome to Wren Security Documentation Portal.
+Wren Security Suite consists of community-driven, open-source software for user authentication, user identity management, and single-sign-on.
+Here you will find reference documentation for the core projects.
 
-NOTE: Documentation is work-in-progress.
+.Wren:AM
+****
+Wren:AM is an "all-in-one" access management solution providing strong and adaptive authentication, authorization, single sign-on (SSO), entitlements, federation and web services security.
+
+https://docs.wrensecurity.org/wrenam/latest[Get Started >]
+****
+
+.Wren:DS
+****
+Wren:DS is an LDAPv3 compliant directory service, which has been developed for the Java platform, providing a high performance, highly available, and secure store for the identities managed by your organization.
+Its easy installation process, combined with the power of the Java platform makes Wren:DS the simplest, fastest directory to deploy and manage.
+
+https://docs.wrensecurity.org/wrends/latest[Get Started >]
+****
+
+.Wren:IDM
+****
+Wren:IDM is a community‐developed identity management system with a flexible data model, multiple extension points and scripting support, including JavaScript and Groovy.
+It can connect to and manage a wide range of systems through the Identity Connector Framework (Wren:ICF).
+
+https://docs.wrensecurity.org/wrenidm/latest[Get Started >]
+****
