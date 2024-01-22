@@ -26,3 +26,10 @@ It can connect to and manage a wide range of systems through the Identity Connec
 
 https://docs.wrensecurity.org/wrenidm/latest[Get Started >]
 ****
+
+.Wren:IG
+****
+Wren:IG is a community‐developed reverse proxy server providing single sign-on (SSO) to any application behind the proxy.
+
+https://docs.wrensecurity.org/wrenig/latest[Get Started >]
+****
