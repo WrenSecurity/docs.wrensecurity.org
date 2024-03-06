@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Synchronization :: Wren Security Docs</title>
+    <link rel="canonical" href="https://docs.wrensecurity.org/wrenidm/latest/components/sync.html">
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/custom.css">
+    <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+    <script src="https://cdn.usefathom.com/script.js" data-site="ASVYZNXZ" defer></script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a class="logo" title="Wren Security" href="https://wrensecurity.org">
+          <img src="../../../_/img/wren.png" alt="Wren Security" width="32">
+        </a>
+        <a class="title" href="https://docs.wrensecurity.org">Wren Security Docs</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="wrenidm" data-version="7.x.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">Wren:IDM</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../getting-started.html">Getting Started</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Component Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="audit.html">Audit</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="authentication.html">Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="crypto.html">Crypto</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="email.html">Email Service</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="managed.html">Managed Objects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="policy.html">Policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="provisioner.html">Provisioner</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="repository.html">Repository</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="scheduler.html">Scheduling</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="script.html">Scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="security.html">Security</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="selfservice.html">Self-service</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="sync.html">Synchronization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workflow.html">Workflow</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Deployment Guide</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../deployment/upgrade.html">Upgrade Guide</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../samples.html">Samples</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community.html">Community</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../links.html">Links</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Wren:IDM</span>
+    <span class="version">7.x.x-dev</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../wrenam/latest/index.html">Wren:AM</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../wrenam/latest/index.html">15.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../wrends/latest/index.html">Wren:DS</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../wrends/latest/index.html">5.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../latest/index.html">Wren:IDM</a>
+      <ul class="versions">
+        <li class="version is-current">
+          <a href="../index.html">7.x.x-dev</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../latest/index.html">6.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../wrenig/latest/index.html">Wren:IG</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../wrenig/latest/index.html">5.x.x</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../docs/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Wren:IDM</a></li>
+    <li><a href="index.html">Component Reference</a></li>
+    <li><a href="sync.html">Synchronization</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">7.x.x-dev</button>
+  <div class="version-menu">
+    <a class="version is-current" href="sync.html">7.x.x-dev</a>
+    <a class="version" href="../../latest/components/sync.html">6.x.x</a>
+  </div>
+</div>
+<div class="edit-this-page"><a href="https://github.com/WrenSecurity/wrenidm-docs/edit/main/modules/components/pages/sync.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Synchronization</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Synchronization</em> Service is responsible for synchronizing data between resources.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">OSGi service class</dt>
+<dd>
+<p><code>org.forgerock.openidm.sync.impl.SynchronizationService</code></p>
+</dd>
+<dt class="hdlist1">OSGi persistent identifier</dt>
+<dd>
+<p><code>org.forgerock.openidm.synchronization</code></p>
+</dd>
+<dt class="hdlist1">Router mapping</dt>
+<dd>
+<p><code>/sync/*</code></p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Synchronization between two resources is defined by mapping in the project file <code>conf/sync.json</code>.
+Each mapping defines the transformation of a source object into a target object, as well as connected lifecycle rules.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">OSGi service class</dt>
+<dd>
+<p><code>org.forgerock.openidm.sync.impl.SyncMappings</code></p>
+</dd>
+<dt class="hdlist1">OSGi persistent identifier</dt>
+<dd>
+<p><code>org.forgerock.openidm.sync</code></p>
+</dd>
+<dt class="hdlist1">Configuration file</dt>
+<dd>
+<p><code>sync.json</code></p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>The following chapters describe the details of the mapping definition and connected lifecycle policies.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_types_of_synchronization"><a class="anchor" href="#_types_of_synchronization"></a>Types of synchronization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are several types of synchronization.
+Changes from the external source system are synchronized using <em>reconciliation</em> or <em>live-sync</em>.
+Changes in the Wren:IdM repository are propagated to the external target systems using <em>implicit synchonization</em>.</p>
+</div>
+<div class="sect2">
+<h3 id="_reconciliation"><a class="anchor" href="#_reconciliation"></a>Reconciliation</h3>
+<div class="paragraph">
+<p>Reconciliation is a synchronization process that ensures that the data in the target system (e.g. accounts) matches the data in the source system.
+Reconciliation is always performed for a specific mapping, i.e. between a source and target system.</p>
+</div>
+<div class="paragraph">
+<p>During reconciliation, the IdM iterates over the entire dataset of the source and target systems to calculate the changes that need to be propagated to the target system.
+This can take a long time if there are many objects in the external system or if the read / update operation in the external system is slow.</p>
+</div>
+<div class="paragraph">
+<p>Reconciliation is a fundamental process for compliance enforcement because it can detect invalid data states in the target system (e.g. orphan accounts).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_live_sync"><a class="anchor" href="#_live_sync"></a>Live-sync</h3>
+<div class="paragraph">
+<p>Live-sync is a synchronization process that synchronizes data changes from the external source system to the IdM.
+Unlike reconciliation, live-sync synchronizes only changes that have been made since the last synchronization.
+These changes are detected by a system-specific mechanism:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>retrieve changes based on the modification timestamp</p>
+</li>
+<li>
+<p>retrieve changes based on the sequence number</p>
+</li>
+<li>
+<p>any other supported mechanism</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This type of synchronization is used to quickly propagate data changes from the external source system to the IdM.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_implicit_synchronization"><a class="anchor" href="#_implicit_synchronization"></a>Implicit synchronization</h3>
+<div class="paragraph">
+<p>Implicit synchronization is synchronization process that automatically propagates changes from the IdM repository to the target systems.
+Synchronization is performed for all relevant mappings (based on the object type) that are enabled.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_synchronization_mapping"><a class="anchor" href="#_synchronization_mapping"></a>Synchronization mapping</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Mapping defines the transformation from source object to target object, including the definition of a synchronized object lifecycle.
+There are two types of objects:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>managed objects</code> – objects maintained in Wren:IDM repository (e.g. managed user representing user identity)</p>
+</li>
+<li>
+<p><code>system objects</code> – objects maintained in external systems (e.g. account in external LDAP)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Both can be either source or target objects.
+Managed user will be the source object when creating accounts the in target system (e.g. LDAP).
+Managed user will be the target object when synchronizing users from the source personal system.</p>
+</div>
+<div class="paragraph">
+<p>Mappings are defined inside <code>conf/sync.json</code> project file.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example of mapping definitions in sync.json</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "mappings" : [
+    {
+      // First mapping
+    },
+    {
+      // Second mapping
+    },
+    // ...
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Each mapping consists of the identification of the source and target resources, validation and correlation rules, mapping properties and handling of synchronization situations.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example of employee mapping between HR system (CSV file) and Wren:IDM</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name" : "csvEmployee_managedUser",
+  "source" : "system/csv/employee",
+  "target" : "managed/user",
+  "validSource" : {
+    "type" : "text/javascript",
+    "source" : "!!source.uid &amp;&amp; !!source.firstName &amp;&amp; !!source.lastName"
+  },
+  "correlationQuery" : {
+    "type" : "text/javascript",
+    "source" : "var query = { _queryFilter: '_id eq \"' + source.uid + '\"' }; query"
+  },
+  "onCreate" : {
+    "type" : "text/javascript",
+    "source" : "target.userName = source.lastName.toLowerCase() + source.uid;"
+  },
+  "properties" : [
+    {
+      "source" : "uid",
+      "target" : "_id"
+    },
+    {
+      "source" : "firstName",
+      "target" : "givenName"
+    },
+    {
+      "source" : "lastName",
+      "target" : "sn"
+    },
+    {
+      "source" : "",
+      "transform" : {
+          "type" : "text/javascript",
+          "source" : "source.firstName.toLowerCase() + '.' + source.lastName.toLowerCase() + '@wrensecurity.org';"
+      },
+      "target" : "mail"
+    },
+    {
+      "default" : "FooBar123",
+      "target" : "password"
+    }
+  ],
+  "policies" : [
+    {
+      "situation" : "ABSENT",
+      "action" : "CREATE"
+    },
+    {
+      "situation" : "CONFIRMED",
+      "action" : "UPDATE"
+    },
+    {
+      "situation" : "UNQUALIFIED",
+      "action" : "DELETE"
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The previous example shows the mapping between HR system (represented by a CSV file) and Wren:IDM (managed object representing user).
+The mapping source is the employee record in the source CSV file, the mapping target is the managed user in the IdM.</p>
+</div>
+<div class="paragraph">
+<p>Mapping is defined by the following attributes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>name</code> – name of the mapping</p>
+</li>
+<li>
+<p><code>source</code>– mapping source (<code>managed</code> or <code>system</code> resource)</p>
+</li>
+<li>
+<p><code>target</code>– mapping target (<code>managed</code> or <code>system</code> resource)</p>
+</li>
+<li>
+<p><code>enableSync</code>– flag indicating whether implicit synchonization is enabled</p>
+</li>
+<li>
+<p><code>sourceCondition</code> – script to filter the source dataset to be mapped</p>
+</li>
+<li>
+<p><code>validSource</code> – script that determines whether the source object is a valid to be mapped</p>
+</li>
+<li>
+<p><code>validTarget</code> – script that determines whether the target object is a valid to be mapped</p>
+</li>
+<li>
+<p><code>correlationScript</code> – script to perform correlation between source and target objects</p>
+</li>
+<li>
+<p><code>{synchronization script hooks}</code> – see <a href="#sync-sync_script_hooks">Synchronization script hooks</a></p>
+</li>
+<li>
+<p><code>{target object script hooks}</code> – see <a href="#sync-target_object_script_hooks">Target object script hooks</a></p>
+</li>
+<li>
+<p><code>properties</code>– objects that describe the mapping of attributes between source and target objects (see <a href="#sync-mapping_properties">Properties</a>)</p>
+</li>
+<li>
+<p><code>policies</code>– definition of actions for synchronization situations (see <a href="#sync-mapping_policies">Policies</a>)</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="sync-mapping_properties"><a class="anchor" href="#sync-mapping_properties"></a>Properties</h3>
+<div class="paragraph">
+<p>Each property object defines how the value of a target attribute is determined.
+There are a number of ways how to map the target attribute value.
+The value can simply be taken directly from the source attribute, or it can be calculated using non-trivial transformation logic.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example of properties in mapping</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+...
+  "properties" : [
+    {
+      "source" : "lastName",
+      "target" : "sn"
+    },
+    {
+      "source" : "",
+      "transform" : {
+          "type" : "text/javascript",
+          "source" : "source.lastName.toLowerCase() + '@wrensecurity.org';"
+      },
+      "target" : "mail"
+    },
+    {
+      "default" : "FooBar123",
+      "target" : "password"
+    }
+  ],
+...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Property object is defined by the following attributes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>source</code> – source attribute to get value (can be empty, then the value is calculated using the transform script or the default value)</p>
+</li>
+<li>
+<p><code>target</code>– target attribute to map value</p>
+</li>
+<li>
+<p><code>transform</code>– script to calculate the target attribute value (global property <code>source</code> can be used to retrieve source object properties)</p>
+</li>
+<li>
+<p><code>default</code>– default value to be used when no value is calculated from the <code>source</code> or <code>transform</code></p>
+</li>
+<li>
+<p><code>condition</code>– script that determines whether or not to map the target attribute</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sync-mapping_policies"><a class="anchor" href="#sync-mapping_policies"></a>Policies</h3>
+<div class="paragraph">
+<p>Each policy object defines actions to be performed for specific synchronization situations.
+Each synchronization situation has a default action associated with it (see <a href="#sync-situations_and_actions">Synchonization situations and actions</a>).</p>
+</div>
+<div class="listingblock">
+<div class="title">Example of policies in mapping</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+...
+  "policies" : [
+    {
+      "situation" : "ABSENT",
+      "action" : "CREATE",
+      "postAction" : {
+        "type" : "text/javascript",
+        "source" : "// Send email notification ..."
+      }
+    },
+    {
+      "situation" : "UNQUALIFIED",
+      "action" : "DELETE"
+    }
+  ]
+...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Property object is defined by the following attributes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>situation</code> – synchronization situation to associate action</p>
+</li>
+<li>
+<p><code>action</code> – action to be performed for the specified synchronization situation</p>
+</li>
+<li>
+<p><code>postAction</code> – script to be executed after the action is completed</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sync-situations_and_actions"><a class="anchor" href="#sync-situations_and_actions"></a>Synchonization situations and actions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are several situations that can occur during synchronization.
+Synchronization situation is determined using the following procedure:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Is source object valid?</p>
+<div class="paragraph">
+<p>The source object is valid if it satisfies the valid source requirements.
+Source objects that have been filtered out by the <code>validSource</code> or <code>sourceCondition</code> scripts are invalid.</p>
+</div>
+</li>
+<li>
+<p>Is source object linked?</p>
+<div class="paragraph">
+<p>Check if there is a link in the IdM for the source object.</p>
+</div>
+</li>
+<li>
+<p>Is there a valid target object?</p>
+<div class="paragraph">
+<p>Use correlation logic to check whether the valid target object exists for the source object.</p>
+</div>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Synchronization situations</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6669%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Situation</th>
+<th class="tableblock halign-left valign-top">Source valid?</th>
+<th class="tableblock halign-left valign-top">Link?</th>
+<th class="tableblock halign-left valign-top">Target object?</th>
+<th class="tableblock halign-left valign-top">Default action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ABSENT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CREATE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ALL_GONE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NOREPORT</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AMBIGUOUS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes (&gt;1)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EXCEPTION</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CONFIRMED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UPDATE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FOUND_ALREADY_LINKED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EXCEPTION</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FOUND</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UPDATE</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LINK_ONLY</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EXCEPTION</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MISSING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EXCEPTION</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOURCE_IGNORED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">REPORT</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOURCE_MISSING</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EXCEPTION</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TARGET_IGNORED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes/no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">REPORT</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UNASSIGNED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EXCEPTION</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UNQUALIFIED</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes/no</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DELETE</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The following situations can only be detected during reconciliation:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>SOURCE_MISSING</code></p>
+</li>
+<li>
+<p><code>TARGET_IGNORED</code></p>
+</li>
+<li>
+<p><code>UNASSIGNED</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following situations can only be detected during source object changes (delete):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>ALL_GONE</code></p>
+</li>
+<li>
+<p><code>LINK_ONLY</code></p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Synchronization actions</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Action</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ASYNC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates asynchronous process, ignore action or reporting</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CREATE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Target object should be created and linked</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DELETE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Target object should be deleted and unlinked</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EXCEPTION</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Throw an exception for the situation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IGNORE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Do not perform any action</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LINK</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Correlated target object should be linked</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NOREPORT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Do not perform action, do not report the situation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">REPORT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Do not perform action, report the situation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UNLINK</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Linked target object should be unlinked</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">UPDATE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Target object should be linked and updated</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sync-sync_script_hooks"><a class="anchor" href="#sync-sync_script_hooks"></a>Synchronization script hooks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Synchronization script hooks provide extension points that allow invoking some logic during various synchronization events.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Available script hooks</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Script Hook</th>
+<th class="tableblock halign-left valign-top">When Executed</th>
+<th class="tableblock halign-left valign-top">Global Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">postMapping</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Script to execute after implicit synchronization has been performed</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>linkQualifier</code> – link qualifier for current mapping<br>
+<code>mappingConfig</code> – object with mapping configuration<br>
+<code>source</code> – source object<br>
+<code>sourceId</code> – source object identifier<br>
+<code>target</code> – target object<br>
+<code>targetId</code> – target object identifier<br>
+<code>situation</code> – synchronization situation for current synchronization operation</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">onRecon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Script to execute at the beginning of the reconciliation</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>mappingConfig</code> – object with mapping configuration</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">result</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Script to execute for each mapping after successful reconciliation</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>source</code> – reconciliation source phase statistics<br>
+<code>target</code> – reconciliation target phase statistics<br>
+<code>global</code> – global reconciliation statistics</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The following global properties are available to all script hooks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>context</code> – execution context (e.g. <a href="https://github.com/WrenSecurity/wrenidm/blob/2a4d5bd0639d48b3b7ad1883d0a8c7ea710647a0/openidm-core/src/main/java/org/forgerock/openidm/sync/ReconContext.java" target="_blank" rel="noopener">ReconContext</a>)</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Example of <code>onRecon</code> script hook</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name" : "csvEmployee_managedUser",
+  // ...
+  "onRecon" : {
+    "type" : "text/javascript",
+    "source" : "logger.info('Reconciliation for mapping ' + mappingConfig.name + ' started...')"
+  },
+  // ...
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sync-target_object_script_hooks"><a class="anchor" href="#sync-target_object_script_hooks"></a>Target object script hooks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Target object script hooks provide extension points that allow invoking some logic during various lifecycle events.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Available script hooks</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Script Hook</th>
+<th class="tableblock halign-left valign-top">When Executed</th>
+<th class="tableblock halign-left valign-top">Global Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">onCreate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Target object is being created</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>linkQualifier</code> – link qualifier for current mapping<br>
+<code>mappingConfig</code> – object with mapping configuration<br>
+<code>source</code> – source object<br>
+<code>sourceId</code> – source object identifier<br>
+<code>target</code> – target object<br>
+<code>targetId</code> – target object identifier<br>
+<code>situation</code> – synchronization situation for current synchronization operation</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">onUpdate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Target object is being updated</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>linkQualifier</code> – link qualifier for current mapping<br>
+<code>mappingConfig</code> – object with mapping configuration<br>
+<code>source</code> – source object<br>
+<code>sourceId</code> – source object identifier<br>
+<code>target</code> – target object<br>
+<code>oldTarget</code> – old target object before any mappings were applied<br>
+<code>targetId</code> – target object identifier<br>
+<code>situation</code> – synchronization situation for current synchronization operation</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">onDelete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Target object is being deleted</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>linkQualifier</code> – link qualifier for current mapping<br>
+<code>mappingConfig</code> – object with mapping configuration<br>
+<code>source</code> – source object<br>
+<code>sourceId</code> – source object identifier<br>
+<code>target</code> – target object<br>
+<code>targetId</code> – target object identifier<br>
+<code>situation</code> – synchronization situation for current synchronization operation</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">onLink</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Source object is being linked to the target object</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>linkQualifier</code> – link qualifier for current mapping<br>
+<code>mappingConfig</code> – object with mapping configuration<br>
+<code>source</code> – source object<br>
+<code>sourceId</code> – source object identifier<br>
+<code>target</code> – target object<br>
+<code>targetId</code> – target object identifier<br></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">onUnlink</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link between source and target objects is being removed</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>linkQualifier</code> – link qualifier for current mapping<br>
+<code>mappingConfig</code> – object with mapping configuration<br>
+<code>source</code> – source object<br>
+<code>sourceId</code> – source object identifier<br>
+<code>target</code> – target object<br>
+<code>targetId</code> – target object identifier<br></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The following global properties are available to all script hooks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>context</code> – execution context (e.g. <a href="https://github.com/WrenSecurity/wrenidm/blob/2a4d5bd0639d48b3b7ad1883d0a8c7ea710647a0/openidm-core/src/main/java/org/forgerock/openidm/sync/ReconContext.java" target="_blank" rel="noopener">ReconContext</a>)</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Example of <code>onCreate</code> script hook</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name" : "csvEmployee_managedUser",
+  // ...
+  "onCreate" : {
+    "type" : "text/javascript",
+    "source" : "target.userName = source.lastName.toLowerCase() + source.uid;"
+  },
+  // ...
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_links"><a class="anchor" href="#_links"></a>Links</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Link objects represent relationships between source objects and target objects (e.g. link between managed user in IdM and account in LDAP).
+The links are used to search for objects in the source / target system and enable the detection of non-standard synchronization situations (e.g. <code>MISSING</code> situation when linked target object has been deleted).
+Links are managed (created / updated / deleted) during the synchronization process and are stored in the IdM database table <code>links</code> with the following structure:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>_id</code> – unique identifier</p>
+</li>
+<li>
+<p><code>_rev</code> –  link object&#8217;s revision</p>
+</li>
+<li>
+<p><code>linkType</code> – mapping name</p>
+</li>
+<li>
+<p><code>firstId</code> – identifier in the source system</p>
+</li>
+<li>
+<p><code>secondId</code> – identifier in the target system</p>
+</li>
+<li>
+<p><code>linkQualifier</code> – link qualifier used for the mapping (<code>default</code> if no qualifier is specified)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. A link exists from another source object
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. A target object exists but it is not valid
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Copyright © 2017-<script>document.write(new Date().getFullYear());</script> Wren Security. Except where noted otherwise, the content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.</p>
+  <p>This page was built using an adapted version of the Antora default UI.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

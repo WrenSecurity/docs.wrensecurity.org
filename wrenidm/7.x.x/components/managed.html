@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Managed Objects :: Wren Security Docs</title>
+    <link rel="canonical" href="https://docs.wrensecurity.org/wrenidm/latest/components/managed.html">
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/custom.css">
+    <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+    <script src="https://cdn.usefathom.com/script.js" data-site="ASVYZNXZ" defer></script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a class="logo" title="Wren Security" href="https://wrensecurity.org">
+          <img src="../../../_/img/wren.png" alt="Wren Security" width="32">
+        </a>
+        <a class="title" href="https://docs.wrensecurity.org">Wren Security Docs</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="wrenidm" data-version="7.x.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">Wren:IDM</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../getting-started.html">Getting Started</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Component Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="audit.html">Audit</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="authentication.html">Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="crypto.html">Crypto</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="email.html">Email Service</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="managed.html">Managed Objects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="policy.html">Policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="provisioner.html">Provisioner</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="repository.html">Repository</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="scheduler.html">Scheduling</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="script.html">Scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="security.html">Security</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="selfservice.html">Self-service</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sync.html">Synchronization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workflow.html">Workflow</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Deployment Guide</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../deployment/upgrade.html">Upgrade Guide</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../samples.html">Samples</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community.html">Community</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../links.html">Links</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Wren:IDM</span>
+    <span class="version">7.x.x-dev</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../wrenam/latest/index.html">Wren:AM</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../wrenam/latest/index.html">15.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../wrends/latest/index.html">Wren:DS</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../wrends/latest/index.html">5.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../latest/index.html">Wren:IDM</a>
+      <ul class="versions">
+        <li class="version is-current">
+          <a href="../index.html">7.x.x-dev</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../latest/index.html">6.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../wrenig/latest/index.html">Wren:IG</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../wrenig/latest/index.html">5.x.x</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../docs/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Wren:IDM</a></li>
+    <li><a href="index.html">Component Reference</a></li>
+    <li><a href="managed.html">Managed Objects</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">7.x.x-dev</button>
+  <div class="version-menu">
+    <a class="version is-current" href="managed.html">7.x.x-dev</a>
+    <a class="version" href="../../latest/components/managed.html">6.x.x</a>
+  </div>
+</div>
+<div class="edit-this-page"><a href="https://github.com/WrenSecurity/wrenidm-docs/edit/main/modules/components/pages/managed.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Managed Objects</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Managed objects</em> represent actual resources that are being managed and synchronized by Wren:IDM.
+Managed objects provide a flexible JSON-based data model with parametric relationships and support for hook scripts that can be attached to various lifecycle events.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">OSGi service class</dt>
+<dd>
+<p><code>org.forgerock.openidm.managed.ManagedObjectService</code></p>
+</dd>
+<dt class="hdlist1">OSGi persistent identifier</dt>
+<dd>
+<p><code>org.forgerock.openidm.managed</code></p>
+</dd>
+<dt class="hdlist1">Configuration file</dt>
+<dd>
+<p><code>managed.json</code></p>
+</dd>
+<dt class="hdlist1">Router mapping</dt>
+<dd>
+<p><code>/managed/*</code></p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>In it&#8217;s default configuration Wren:IDM defines <em>user</em>, <em>role</em> and <em>assignment</em> as core managed objects.
+You can define your own managed objects (e.g. objects for organizational structure) or modify the predefined ones (e.g. add / remove properties).</p>
+</div>
+<div class="paragraph">
+<p>Schema and behavior of managed objects is defined in the project file <code>conf/managed.json</code> (the default file is located on the Wren:IDM GitHub <a href="https://github.com/WrenSecurity/wrenidm/blob/main/openidm-zip/src/main/resources/conf/managed.json" target="_blank" rel="noopener">repository</a>).
+The following chapters describe the details of the schema definition, as well as the lifecycle of managed objects and how to create relationships between managed objects.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_schema_definition"><a class="anchor" href="#_schema_definition"></a>Schema Definition</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Managed object schema and behavior is defined inside <code>conf/managed.json</code> project file.
+This configuration is not strictly validated and can hold additional metadata.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Not all schema properties are equal.
+Some of them define the object itself, others are used only by Admin UI and are completely irrelevant in IdM processes.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Example of managed object definition for organizational unit</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name" : "ou",
+  "schema" : {
+    "id" : "http://jsonschema.net",
+    "$schema" : "http://json-schema.org/draft-03/schema",
+    "title" : "Organizational Unit",
+    "viewable" : true,
+    "order" : [
+      "_id",
+      "name"
+    ],
+    "properties" : {
+      "_id" : {
+        "title" : "ID",
+        "description" : "Technical identifier of the organizational unit.",
+        "type" : "string",
+        "viewable" : false,
+        "searchable" : false,
+        "userEditable" : false
+      },
+      "name" : {
+        "title" : "Name",
+        "description" : "Name of the organizational unit.",
+        "type" : "string",
+        "viewable" : true,
+        "searchable" : true,
+        "userEditable" : true
+      },
+      // ... other properties
+    },
+    "type" : "object",
+    "required" : [
+      "name"
+    ]
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Managed object is defined using following attributes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>name</code> – name of the managed object</p>
+</li>
+<li>
+<p><code>schema</code> – managed object&#8217;s schema definition</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>title</code> – title of the managed object in the Admin UI</p>
+</li>
+<li>
+<p><code>viewable</code> – flag indicating whether managed object should be displayed in the Admin UI</p>
+</li>
+<li>
+<p><code>order</code> – order of properties on the Admin UI detail page</p>
+</li>
+<li>
+<p><code>properties</code> – definition of managed object properties (see chapter <a href="#managed-properties">Properties</a>)</p>
+</li>
+<li>
+<p><code>type</code> – type of the managed object (only <code>object</code> type supported at this moment)</p>
+</li>
+<li>
+<p><code>requried</code> – list of mandatory properties</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="managed-properties"><a class="anchor" href="#managed-properties"></a>Properties</h3>
+<div class="paragraph">
+<p>Each managed object is composed of a set of properties.
+These properties can be added / removed as needed.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example of a property definition for the name of an organizational unit:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "title" : "Name",
+  "description" : "Name of the organizational unit.",
+  "type" : "string",
+  "viewable" : true,
+  "searchable" : true,
+  "userEditable" : true,
+  "policies" : [],
+  "isVirtual" : false,
+  "minLength" : 3
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Managed object property is defined using following attributes (optional attributes can be omitted in the definition):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>title</code> – name to be used in Admin UI</p>
+</li>
+<li>
+<p><code>description</code> – brief description to be used in Admin UI</p>
+</li>
+<li>
+<p><code>type</code> – property value data type</p>
+<div class="ulist">
+<ul>
+<li>
+<p>supported data types are <code>string</code>, <code>object</code>, <code>array</code>, <code>number</code>, <code>integer</code>, <code>boolean</code> and <code>null</code></p>
+</li>
+<li>
+<p>value can be defined as plain string or array of values</p>
+</li>
+<li>
+<p>if the property is not mandatory you must include data type <code>null</code> among the other types</p>
+</li>
+<li>
+<p>value examples:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>"string"</code> – required string value</p>
+</li>
+<li>
+<p><code>["string", "null"]</code> – optional string value</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>viewable</code> – flag indicating whether property will be visible on the object&#8217;s detail page in Admin UI</p>
+<div class="ulist">
+<ul>
+<li>
+<p>allowed values: <code>true</code> (default) or <code>false</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>searchable</code> – flag indicating whether property can be searched in Admin UI</p>
+<div class="ulist">
+<ul>
+<li>
+<p>searchable property is displayed in the list of managed object items in Admin UI</p>
+</li>
+<li>
+<p>allowed values: <code>true</code> or <code>false</code> (default)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>userEditable</code> – flag indicating whether user can edit property value in Admin UI</p>
+<div class="ulist">
+<ul>
+<li>
+<p>allowed values: <code>true</code> or <code>false</code> (default)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>policies</code> – validation rules to be applied to the property</p>
+<div class="ulist">
+<ul>
+<li>
+<p>see chapter <em>Policies</em> for more information</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>isVirtual</code> – flag indicating whether property value is dynamically calculated by a script</p>
+<div class="ulist">
+<ul>
+<li>
+<p>see chapter <a href="#managed-virtual_properties">Virtual Properties</a> for more information</p>
+</li>
+<li>
+<p>allowed values: <code>true</code> or <code>false</code> (default)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>minLength</code> – minimum length used by <em>minLength</em> policy validation</p>
+<div class="ulist">
+<ul>
+<li>
+<p>default value: unlimited length</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="managed-virtual_properties"><a class="anchor" href="#managed-virtual_properties"></a>Virtual Properties</h4>
+<div class="paragraph">
+<p>Virtual property is a special type of property whose value is calculated based on a script.
+Value is recalculated each time the managed object is retrieved from the repository.
+The value can be persisted in the repository to allow comparison of old and new values and to trigger synchronization events.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example of virtual property definition for user status</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "title" : "End Date",
+  "description" : "Date of the user's departure.",
+  // ...
+},
+{
+  "title" : "Effective Status",
+  "description" : "Status of the user (ACTIVE or GONE).",
+  "viewable" : false,
+  "type" : "string",
+  "returnByDefault" : true,
+  "isVirtual" : true,
+  "onRetrieve" : {
+    "type" : "text/javascript",
+    "source" : "!object.endDate || new Date(object.endDate) &gt;= new Date() ? 'ACTIVE' : 'GONE';"
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_predefined_objects"><a class="anchor" href="#_predefined_objects"></a>Predefined Objects</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following objects are predefined and used in Wren:IDM:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>User</code> – managed object representing a user identity and its properties</p>
+</li>
+<li>
+<p><code>Role</code> – managed object representing <em>provisioning</em> or <em>authorization</em> role</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Authorization Role</code> – grants privileges within IdM</p>
+</li>
+<li>
+<p><code>Provisioning Role</code> – define how objects are provisioned in target systems</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>Assignment</code> – composable provisioning rule</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following properties are used as the basis for <em>role-based access control</em>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Role Grants</code> – relationship between users and roles (they can be either manual or conditional)</p>
+</li>
+<li>
+<p><code>Effective Roles</code> – indicate which roles a user ends up with after applying additional logic (by default, the effective role of a user matches his <em>Role Grants</em>)</p>
+</li>
+<li>
+<p><code>Effective Assignments</code> – indicate which assignments a user ends up with after applying additional logic, similar in concept to <em>Effective Roles</em></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+There is nothing inherently special about the pre-defined types.
+In a new installation, these types have some behavior that controls how provisioning is done, but this behavior is defined in the same way that you define behavior for any custom type.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_script_hooks"><a class="anchor" href="#_script_hooks"></a>Script Hooks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Script hooks provide extension points that allow invoking some logic on a managed object during various lifecycle events.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Available script hooks</caption>
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 42.8571%;">
+<col style="width: 42.8572%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Script Hook</th>
+<th class="tableblock halign-left valign-top">When Executed</th>
+<th class="tableblock halign-left valign-top">Global Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">onCreate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Managed object is being created</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>object</code> – managed object to be created</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">onUpdate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Managed object is being updated</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>oldObject</code> – managed object&#8217;s old state<br>
+<code>newObject</code> – managed object&#8217;s new state</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">onDelete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Managed object is being deleted</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>object</code> – managed object to be deleted</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">onStore</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Managed object is being stored in the repository</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>object</code> – managed object to be stored to the repository</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">postCreate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Managed object has been created (before implicit synchronization is performed)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>object</code> – created managed object</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">postUpdate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Managed object has been updated (before implicit synchronization is performed)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>oldObject</code> – managed object&#8217;s old state<br>
+<code>newObject</code> – managed object&#8217;s new state</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">postDelete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Managed object has been deleted (before implicit synchronization is performed)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>oldObject</code> – deleted managed object</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">onSync</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implicit synchronization of managed object has finished</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>syncResults</code> – object with synchronization results<br>
+<code>oldObject</code> – managed object&#8217;s old state<br>
+<code>newObject</code> – managed object&#8217;s new state</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">onRetrieve</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Managed object has been retrieved from the repository</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>object</code> – retrieved managed object</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">onValidate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Managed object&#8217;s property validation is performed</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><code>object</code> – managed object to be validated</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The following global properties are available to all script hooks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>request</code> – request object (e.g. request query parameters)</p>
+</li>
+<li>
+<p><code>resourceName</code> – resource name of the managed object (e.g. <code>managed/user</code>)</p>
+</li>
+<li>
+<p><code>context</code> – execution context (e.g. <a href="https://github.com/WrenSecurity/wrensec-commons/blob/ba626e8422f65a55fb5ab9d38cf0365890d484e0/rest/json-resource-http/src/main/java/org/forgerock/json/resource/http/HttpContext.java" target="_blank" rel="noopener">HttpContext</a>)</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Example of <code>onCreate</code> script hook</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name" : "user",
+  "onCreate" : {
+    "type" : "text/javascript",
+    "source" : "object.mail = object.givenName + '.' + object.sn + '@example.org'"
+  },
+  // ...
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_relationships"><a class="anchor" href="#_relationships"></a>Relationships</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Managed objects can have relationships that connect one managed object to another.
+Relationship cardinality can be <em>1:1</em>, <em>1:N</em> or <em>M:N</em>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+By default, each assignment of a role to a user is represented by a relationship entry.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Example of <code>manager</code> relationship property configuration:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">"manager" : {
+  "type" : "relationship",
+  "reverseRelationship" : true,
+  "reversePropertyName" : "reports",
+  "validate" : true,
+  // ...
+  "properties" : {
+    "_ref" : {
+      "type" : "string"
+    },
+    "_refProperties" : {
+      "type" : "object",
+      "properties" : {
+        "_id" : {
+          "type" : "string"
+        }
+      }
+    }
+  },
+  "resourceCollection" : [
+    {
+      "path" : "managed/user",
+      "label" : "User",
+      "query" : {
+        "queryFilter" : "true",
+        "fields" : [
+          "userName",
+          "givenName",
+          "sn"
+        ],
+        "sortKeys" : [
+          "userName"
+        ]
+      }
+    }
+  ],
+  "userEditable" : false
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As shown in the example above, the <code>manager</code> property allows you to create relationships between two managed users – an employee and his manager.</p>
+</div>
+<div class="paragraph">
+<p>Relationship property is defined using the following attributes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>type</code> – type of relationship field</p>
+<div class="ulist">
+<ul>
+<li>
+<p>value <code>relationship</code> indicates <em>1:*</em> relations</p>
+</li>
+<li>
+<p>value <code>array</code> indicates <em>M:*</em> relations</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>reverseRelationship</code> – flag indicating whether the relationship is bi-directional</p>
+</li>
+<li>
+<p><code>reversePropertyName</code> – name of the reverse property for bi-directional relationships</p>
+</li>
+<li>
+<p><code>validate</code> – flag indicating whether creation of relationship should be validated (i.e. checked whether referenced objects exist)</p>
+</li>
+<li>
+<p><code>properties</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>_ref</code> – type of managed object relationship reference</p>
+</li>
+<li>
+<p><code>_refProperties</code> – properties to be part of relationship definition, you can add custom attribues (e.g. <code>note</code> or <code>startDate</code>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>resourceCollection</code> – describes managed objects and its properties to be listed in the reversed relationship property</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Copyright © 2017-<script>document.write(new Date().getFullYear());</script> Wren Security. Except where noted otherwise, the content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.</p>
+  <p>This page was built using an adapted version of the Antora default UI.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

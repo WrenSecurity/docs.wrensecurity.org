@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<sitemap>
+<loc>https://docs.wrensecurity.org/sitemap-docs.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://docs.wrensecurity.org/sitemap-wrenam.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://docs.wrensecurity.org/sitemap-wrends.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://docs.wrensecurity.org/sitemap-wrenidm.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://docs.wrensecurity.org/sitemap-wrenig.xml</loc>
+</sitemap>
+</sitemapindex>
