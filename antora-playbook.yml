@@ -12,7 +12,7 @@ content:
   - url: https://github.com/WrenSecurity/wrends-docs.git
     branches: HEAD
   - url: https://github.com/WrenSecurity/wrenidm-docs.git
-    branches: HEAD
+    branches: [HEAD, 6.x.x]
   - url: https://github.com/WrenSecurity/wrenig-docs.git
     branches: HEAD
 urls:
