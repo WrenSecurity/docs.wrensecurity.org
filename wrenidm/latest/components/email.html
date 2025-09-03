@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Email Service :: Wren Security Docs</title>
+    <link rel="canonical" href="https://docs.wrensecurity.org/wrenidm/latest/components/email.html">
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/custom.css">
+    <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+    <script src="https://cdn.usefathom.com/script.js" data-site="ASVYZNXZ" defer></script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a class="logo" title="Wren Security" href="https://wrensecurity.org">
+          <img src="../../../_/img/wren.png" alt="Wren Security" width="32">
+        </a>
+        <a class="title" href="https://docs.wrensecurity.org">Wren Security Docs</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="wrenidm" data-version="6.x.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">Wren:IDM</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../getting-started.html">Getting Started</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Component Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="audit.html">Audit</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="authentication.html">Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="crypto.html">Crypto</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="email.html">Email Service</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="managed.html">Managed Objects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="policy.html">Policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="provisioner.html">Provisioner</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="repository.html">Repository</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="scheduler.html">Scheduling</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="script.html">Scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="security.html">Security</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="selfservice.html">Self-service</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sync.html">Synchronization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workflow.html">Workflow</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../samples.html">Samples</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community.html">Community</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../links.html">Links</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Wren:IDM</span>
+    <span class="version">6.x.x</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../wrenam/latest/index.html">Wren:AM</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../wrenam/latest/index.html">15.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../wrends/latest/index.html">Wren:DS</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../wrends/latest/index.html">5.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">Wren:IDM</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../7.x.x/index.html">7.x.x-dev</a>
+        </li>
+        <li class="version is-current is-latest">
+          <a href="../index.html">6.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../wrenig/latest/index.html">Wren:IG</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../wrenig/latest/index.html">5.x.x</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../docs/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Wren:IDM</a></li>
+    <li><a href="index.html">Component Reference</a></li>
+    <li><a href="email.html">Email Service</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">6.x.x</button>
+  <div class="version-menu">
+    <a class="version" href="../../7.x.x/components/email.html">7.x.x-dev</a>
+    <a class="version is-current" href="email.html">6.x.x</a>
+  </div>
+</div>
+<div class="edit-this-page"><a href="https://github.com/WrenSecurity/wrenidm-docs/edit/6.x.x/modules/components/pages/email.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Email Service</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Email Service</em> provides a built-in service to send email notifications.
+The service uses external outbound SMTP mail server.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">OSGi service class</dt>
+<dd>
+<p><code>org.forgerock.openidm.external.email.impl.EmailServiceImpl</code></p>
+</dd>
+<dt class="hdlist1">OSGi persistent identifier</dt>
+<dd>
+<p><code>org.forgerock.openidm.external.email</code></p>
+</dd>
+<dt class="hdlist1">Configuration file</dt>
+<dd>
+<p><code>external.email.json</code></p>
+</dd>
+<dt class="hdlist1">Router mapping</dt>
+<dd>
+<p><code>/external/email</code></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_outbound_server_configuration"><a class="anchor" href="#_outbound_server_configuration"></a>Outbound Server Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The outbound email server is configured through <code>external.email.json</code> file in <code>project/conf</code> directory.
+The following configuration properties are available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>host</code> –⁠ SMTP server hostname (e.g. <code>smtp.gmail.com</code> or <code>localhost</code>)</p>
+</li>
+<li>
+<p><code>port</code> –⁠ SMTP server port (e.g. <code>25</code> or <code>587</code>)</p>
+</li>
+<li>
+<p><code>debug</code> –⁠ flag indicating whether <em>JavaMail</em> debug mode is enabled (See <a href="https://javaee.github.io/javamail/FAQ#debug" target="_blank" rel="noopener">JavaMail FAQ</a>)</p>
+</li>
+<li>
+<p><code>auth</code> – SMTP server authentication properties</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>enable</code> – flag indicating whether authentication is required</p>
+</li>
+<li>
+<p><code>username</code> – account to be used to connect to the SMTP server</p>
+</li>
+<li>
+<p><code>password</code> – account&#8217;s password</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>starttls</code> – SMTP server authentication properties</p>
+</li>
+<li>
+<p><code>from</code> – default sender email address (optional, can be specified for each email separately)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example of configuration for Google SMTP server:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "host" : "smtp.gmail.com",
+  "port" : "587",
+  "debug" : false,
+  "auth" : {
+    "enable" : true,
+    "username" : "foobar",
+    "password" : "wrensecurity"
+  },
+  "starttls" : {
+    "enable" : true
+  },
+  "from" : "info@wrensecurity.org"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sending_email"><a class="anchor" href="#_sending_email"></a>Sending Email</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Email notifications can be sent in two ways – from a script or through REST API.
+Both options use the same notification properties:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>from</code> –⁠ sender email address</p>
+</li>
+<li>
+<p><code>to</code> –⁠ email recipients (comma-separated list of email addresses)</p>
+</li>
+<li>
+<p><code>cc</code> – recipients of email copy (comma-separated list of email addresses)</p>
+</li>
+<li>
+<p><code>bcc</code> –⁠ recipients of email blind copy (comma-separated list of email addresses)</p>
+</li>
+<li>
+<p><code>subject</code> –⁠ email subject</p>
+</li>
+<li>
+<p><code>body</code> –⁠ email body</p>
+</li>
+<li>
+<p><code>type</code> –⁠ email type (<code>text/plain</code>, <code>text/html</code> or <code>text/xml</code>)</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_using_script"><a class="anchor" href="#_using_script"></a>Using Script</h3>
+<div class="paragraph">
+<p>You can send email notification using action resource with external/email context.
+In the following example a testing email is sent to <code>recipient@wrensecurity.org</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">var params = {
+  from: 'idm@wrensecurity.org',
+  to: 'recipient@wrensecurity.org',
+  subject: 'Testing Notification',
+  type: 'text/plain',
+  body: 'This is testing email notification sent from Wren:IDM.'
+};
+openidm.action('external/email', 'send', params);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_using_rest_api"><a class="anchor" href="#_using_rest_api"></a>Using REST API</h3>
+<div class="paragraph">
+<p>You can send email notification using REST API by sending a HTTP POST request to the <code>/openidm/external/email</code> resource.
+In the following example a testing email is sent to <code>recipient@wrensecurity.org</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">curl \
+  -H "Content-Type: application/json" \
+  -u openidm-admin:openidm-admin \
+  -XPOST --data '{
+    "from":"idm@wrensecurity.org",
+    "to":"recipient@wrensecurity.org",
+    "subject":"Testing Notification",
+    "type":"text/plain",
+    "body":"This is testing email notification sent from Wren:IDM."
+   }' \
+  "http://localhost:8080/openidm/external/email?_action=send"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following response is returned when the email is sent successfully:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{ "status": "OK" }</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Copyright © 2017-<script>document.write(new Date().getFullYear());</script> Wren Security. Except where noted otherwise, the content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.</p>
+  <p>This page was built using an adapted version of the Antora default UI.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

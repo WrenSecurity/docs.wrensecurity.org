@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Self-service :: Wren Security Docs</title>
+    <link rel="canonical" href="https://docs.wrensecurity.org/wrenidm/latest/components/selfservice.html">
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/custom.css">
+    <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+    <script src="https://cdn.usefathom.com/script.js" data-site="ASVYZNXZ" defer></script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a class="logo" title="Wren Security" href="https://wrensecurity.org">
+          <img src="../../../_/img/wren.png" alt="Wren Security" width="32">
+        </a>
+        <a class="title" href="https://docs.wrensecurity.org">Wren Security Docs</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="wrenidm" data-version="6.x.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">Wren:IDM</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../getting-started.html">Getting Started</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Component Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="audit.html">Audit</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="authentication.html">Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="crypto.html">Crypto</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="email.html">Email Service</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="managed.html">Managed Objects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="policy.html">Policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="provisioner.html">Provisioner</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="repository.html">Repository</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="scheduler.html">Scheduling</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="script.html">Scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="security.html">Security</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="selfservice.html">Self-service</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sync.html">Synchronization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workflow.html">Workflow</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../samples.html">Samples</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community.html">Community</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../links.html">Links</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Wren:IDM</span>
+    <span class="version">6.x.x</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../wrenam/latest/index.html">Wren:AM</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../wrenam/latest/index.html">15.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../wrends/latest/index.html">Wren:DS</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../wrends/latest/index.html">5.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">Wren:IDM</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../7.x.x/index.html">7.x.x-dev</a>
+        </li>
+        <li class="version is-current is-latest">
+          <a href="../index.html">6.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../wrenig/latest/index.html">Wren:IG</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../wrenig/latest/index.html">5.x.x</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../docs/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Wren:IDM</a></li>
+    <li><a href="index.html">Component Reference</a></li>
+    <li><a href="selfservice.html">Self-service</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">6.x.x</button>
+  <div class="version-menu">
+    <a class="version" href="../../7.x.x/components/selfservice.html">7.x.x-dev</a>
+    <a class="version is-current" href="selfservice.html">6.x.x</a>
+  </div>
+</div>
+<div class="edit-this-page"><a href="https://github.com/WrenSecurity/wrenidm-docs/edit/6.x.x/modules/components/pages/selfservice.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Self-service</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Self-service</em> components offer a way to register self-service processes (e.g. forgotten password reset) and handle their execution.
+A self-service process is an anonymous process consisting of a set of discrete stages that the user progresses in a predefined order (e.g. user input or email verification).
+Each individual stage can access and mutate the shared process state (read necessary data from it or update it with data that may be useful to subsequent stages).</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">OSGi service class</dt>
+<dd>
+<p><code>org.forgerock.openidm.selfservice.impl.SelfService</code></p>
+</dd>
+<dt class="hdlist1">OSGi persistent identifier</dt>
+<dd>
+<p><code>org.forgerock.openidm.selfservice</code></p>
+</dd>
+<dt class="hdlist1">Configuration file</dt>
+<dd>
+<p><code>selfservice-&lt;processName&gt;.json</code></p>
+</dd>
+<dt class="hdlist1">Router mapping</dt>
+<dd>
+<p><code>/selfservice/&lt;processName&gt;</code></p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Wren:IDM provides support for three different self-service processes that can be configured out-of-the-box from the Admin UI (see <a href="#selfservice-predefined-processes">Predefined Processes</a>).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_process_definition"><a class="anchor" href="#_process_definition"></a>Process Definition</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Self-service process is defined inside <code>conf/selfservice-&lt;processName&gt;.json</code> project file.
+The configuration requires following properties:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>stagesConfig</code> – array of stage configurations (see chapter <a href="#selfservice-stage-configuration">Stage Configuration</a>)</p>
+</li>
+<li>
+<p><code>snapshotToken</code> – snapshot token configuration (see chapter <a href="#selfservice-token-configuration">Snapshot Token Configuration</a>)</p>
+</li>
+<li>
+<p><code>storage</code> – process state persistence configuration</p>
+<div class="ulist">
+<ul>
+<li>
+<p>allowed values: <code>"stateless"</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Simple password reset process definition example</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "stageConfigs" : [
+    {
+      "name" : "userQuery",
+      "identityServiceUrl" : "managed/user",
+      "identityIdField" : "_id",
+      "identityEmailField" : "mail",
+      "identityUsernameField" : "userName",
+      "identityAccountStatusField" : "accountStatus",
+      "validQueryFields" : ["userName", "mail"]
+    },
+    {
+      "name" : "resetStage",
+      "identityServiceUrl" : "managed/user",
+      "identityPasswordField" : "password"
+    }
+  ],
+  "snapshotToken" : {
+    "type" : "jwt",
+    "jweAlgorithm" : "RSAES_PKCS1_V1_5",
+    "encryptionMethod" : "A128CBC_HS256",
+    "jwsAlgorithm" : "HS256",
+    "tokenExpiry" : 180
+  },
+  "storage" : "stateless"
+}</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="selfservice-stage-configuration"><a class="anchor" href="#selfservice-stage-configuration"></a>Stage Configuration</h3>
+<div class="paragraph">
+<p>Stage configurations vary from stage to stage.
+Documentation for all default stages can be found in chapter <a href="#selfservice-supported-stages">Supported Stages</a>.</p>
+</div>
+<div class="paragraph">
+<p>Type of the stage that is being defined by the configuration object must be specified with one of the following properties:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>name</code> – default stage name (e.g. <code>"resetStage"</code>)</p>
+</li>
+<li>
+<p><code>class</code> – custom stage configuration class name (e.g. <code>"org.forgerock.selfservice.stages.reset.ResetStageConfig"</code>)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="selfservice-token-configuration"><a class="anchor" href="#selfservice-token-configuration"></a>Snapshot Token Configuration</h3>
+<div class="paragraph">
+<p>Self-service processes utilize JSON Web Token (JWT) for storing process context / state details.
+The configuration of <code>snapshotToken</code> property requires the following properties:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>type</code> – token type</p>
+<div class="ulist">
+<ul>
+<li>
+<p>allowed values: <code>"jwt"</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>jweAlgorithm</code> – JWE algorithm</p>
+<div class="ulist">
+<ul>
+<li>
+<p>allowed values: see <a href="https://github.com/WrenSecurity/wrensec-commons/blob/main/json-web-token/src/main/java/org/forgerock/json/jose/jwe/JweAlgorithm.java" target="_blank" rel="noopener">JweAlgorithm</a> class in <code>wrensec-commons</code> GitHub repository</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>encryptionMethod</code> – encryption method</p>
+<div class="ulist">
+<ul>
+<li>
+<p>allowed values: see <a href="https://github.com/WrenSecurity/wrensec-commons/blob/main/json-web-token/src/main/java/org/forgerock/json/jose/jwe/EncryptionMethod.java" target="_blank" rel="noopener">EncryptionMethod</a> class in <code>wrensec-commons</code> GitHub repository</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>jwsAlgorithm</code> – JWS algorithm</p>
+<div class="ulist">
+<ul>
+<li>
+<p>allowed values: see <a href="https://github.com/WrenSecurity/wrensec-commons/blob/main/json-web-token/src/main/java/org/forgerock/json/jose/jws/JwsAlgorithm.java" target="_blank" rel="noopener">JwsAlgorithm</a> class in <code>wrensec-commons</code> GitHub repository</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>tokenExpiry</code> – token life time in seconds (optional)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>if not provided, the token never expires (stateless tokens should always have an expiry configured)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="selfservice-supported-stages"><a class="anchor" href="#selfservice-supported-stages"></a>Supported Stages</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Wren:IDM provides a number of default stages that can be used in a self-service process.
+These stages are supported by the default End User UI.</p>
+</div>
+<div class="sect2">
+<h3 id="_captcha_stage"><a class="anchor" href="#_captcha_stage"></a>Captcha Stage</h3>
+<div class="paragraph">
+<p>Verification stage based on reCAPTCHA service.</p>
+</div>
+<div class="paragraph">
+<p>Configuration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>name</code> – <code>"captcha"</code></p>
+</li>
+<li>
+<p><code>recaptchaSiteKey</code> – reCAPTCHA site key</p>
+</li>
+<li>
+<p><code>recaptchaSecretKey</code> – reCAPTCHA secret key</p>
+</li>
+<li>
+<p><code>recaptchaUri</code> – URI for verifying reCAPTCHA</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Example configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name" : "captcha",
+  "recaptchaSiteKey" : "123",
+  "recaptchaSecretKey" : "abc",
+  "recaptchaUri" : "https://www.google.com/recaptcha/api/siteverify"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_email_validation_stage"><a class="anchor" href="#_email_validation_stage"></a>Email Validation Stage</h3>
+<div class="paragraph">
+<p>Stage for verifying the user&#8217;s email address.
+This stage reads the email address from the process state and sends a verification email to that address.
+The verification email message contains a verification link (including query parameter with process state token) for process continuation.
+The user has to open the link to progress to the next process stage.</p>
+</div>
+<div class="paragraph">
+<p>Configuration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>name</code> – <code>"emailValidation"</code></p>
+</li>
+<li>
+<p><code>emailServiceUrl</code> – URL of the email service that will be used to send verification email</p>
+</li>
+<li>
+<p><code>emailServiceParameters</code> – additional parameters for the email service</p>
+</li>
+<li>
+<p><code>subjectTranslations</code> – map of verification email subjects for different locales</p>
+<div class="ulist">
+<ul>
+<li>
+<p>expected format: <code>Map&lt;locale, subject&gt;</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>messageTranslations</code> – map of verification email messages for different locales</p>
+<div class="ulist">
+<ul>
+<li>
+<p>expected format: <code>Map&lt;locale, message&gt;</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>mimeType</code> – verification email message MIME type</p>
+</li>
+<li>
+<p><code>from</code> – verification email sender address</p>
+</li>
+<li>
+<p><code>verificationLinkToken</code> – string token representing where the verification URL should be substituted</p>
+</li>
+<li>
+<p><code>verificationLink</code> – verification URL to be passed into the verification email message</p>
+</li>
+<li>
+<p><code>identityEmailField</code> – field name for the identity email address</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Example configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name" : "emailValidation",
+  "emailServiceUrl" : "external/email",
+  "emailServiceParameters" : {
+    "someflag" : "true"
+  },
+  "subjectTranslations" : {
+    "en" : "Email subject in EN",
+    "fr" : "Email subject in FR"
+  },
+  "messageTranslations" : {
+    "en" : "Email message with verification link %link% in EN",
+    "fr" : "Email message with verification link %link% in FR"
+  },
+  "mimeType" : "text/plain",
+  "from" : "noreply@example.com",
+  "verificationLinkToken" : "%link%",
+  "verificationLink" : "https://localhost:8080/#/emailVerification/",
+  "identityEmailField" : "mail"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_kba_security_answer_definition_stage"><a class="anchor" href="#_kba_security_answer_definition_stage"></a>KBA Security Answer Definition Stage</h3>
+<div class="paragraph">
+<p>Stage responsible for providing configured KBA questions to the user and storing provided answers to the process state.</p>
+</div>
+<div class="paragraph">
+<p>Configuration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>name</code> – <code>"kbaSecurityAnswerDefinitionStage"</code></p>
+</li>
+<li>
+<p><code>kbaConfig</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>questions</code> – predefined security questions for users to answer</p>
+<div class="ulist">
+<ul>
+<li>
+<p>expected format: <code>Map&lt;id, Map&lt;locale, question&gt;&gt;</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>kbaPropertyName</code> – user property name where KBA details will be set</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>numberOfAnswersUserMustSet</code> – number of answers that user must set</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If <code>kbaConfig</code> is set to <code>null</code>, Self-service service will try to read the configuration from <code>conf/selfservice.kba.json</code> file.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Example configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name" : "kbaSecurityAnswerDefinitionStage",
+  "numberOfAnswersUserMustSet" : "1",
+  "kbaConfig" : {
+    "kbaPropertyName" : "kbaInfo",
+    "questions" : {
+      "1" : {
+        "en" : "Question 1 in EN",
+        "fr" : "Question 1 in FR"
+      },
+      "2" : {
+        "en" : "Question 2 in EN",
+        "fr" : "Question 2 in FR"
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_kba_security_answer_verification_stage"><a class="anchor" href="#_kba_security_answer_verification_stage"></a>KBA Security Answer Verification Stage</h3>
+<div class="paragraph">
+<p>Stage responsible for verifying user provided answers to KBA questions stored in the process state.</p>
+</div>
+<div class="paragraph">
+<p>Configuration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>name</code> – <code>"kbaSecurityAnswerVerificationStage"</code></p>
+</li>
+<li>
+<p><code>kbaConfig</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>questions</code> – predefined security questions for users to answer</p>
+<div class="ulist">
+<ul>
+<li>
+<p>expected format: <code>Map&lt;id, Map&lt;locale, question&gt;&gt;</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>kbaPropertyName</code> – user property name where KBA details were set</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>numberOfQuestionsUserMustAnswer</code> – number of questions that user must answer</p>
+</li>
+<li>
+<p><code>identityServiceUrl</code> – identity service URL used to read the user object</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If <code>kbaConfig</code> is set to <code>null</code>, Self-service service will try to read the configuration from <code>conf/selfservice.kba.json</code> file.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Example configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name" : "kbaSecurityAnswerVerificationStage",
+  "identityServiceUrl" : "managed/user",
+  "numberOfQuestionsUserMustAnswer" : "2",
+  "kbaConfig" : {
+    "kbaPropertyName" : "kbaInfo",
+    "questions" : {
+      "1" : {
+        "en" : "Question 1 in EN",
+        "fr" : "Question 1 in FR"
+      },
+      "2" : {
+        "en" : "Question 2 in EN",
+        "fr" : "Question 2 in FR"
+      }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_user_registration_stage"><a class="anchor" href="#_user_registration_stage"></a>User Registration Stage</h3>
+<div class="paragraph">
+<p>Using the configured identity service, this stage creates a new user with data stored in the process context by previous stages.</p>
+</div>
+<div class="paragraph">
+<p>Configuration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>name</code> – <code>"selfRegistration"</code></p>
+</li>
+<li>
+<p><code>identityServiceUrl</code> – resource URL used to create new user</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Example configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name" : "selfRegistration",
+  "identityServiceUrl" : "managed/user"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_password_reset_stage"><a class="anchor" href="#_password_reset_stage"></a>Password Reset Stage</h3>
+<div class="paragraph">
+<p>Using the configured identity service, this stage patches the user object with the newly provided password.</p>
+</div>
+<div class="paragraph">
+<p>Configuration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>name</code> – <code>"resetStage"</code></p>
+</li>
+<li>
+<p><code>identityServiceUrl</code> – resource URL used to patch the user</p>
+</li>
+<li>
+<p><code>identityPasswordField</code> – user property name where password should be stored</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Example configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name" : "resetStage",
+  "identityServiceUrl" : "managed/user",
+  "identityPasswordField" : "password"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_terms_and_conditions_stage"><a class="anchor" href="#_terms_and_conditions_stage"></a>Terms and Conditions Stage</h3>
+<div class="paragraph">
+<p>Stage presents the configured Terms and Conditions text to the user for acceptance.</p>
+</div>
+<div class="paragraph">
+<p>Configuration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>name</code> – <code>"termsAndConditions"</code></p>
+</li>
+<li>
+<p><code>termsTranslations</code> – map of terms and conditions for different locales</p>
+<div class="ulist">
+<ul>
+<li>
+<p>expected format: <code>Map&lt;locale, terms and conditions string&gt;</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Example configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name" : "termsAndConditions",
+  "termsTranslations" : {
+    "en" : "Terms and conditions in EN",
+    "fr" : "Terms and conditions in FR",
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_email_based_username_retrieval_stage"><a class="anchor" href="#_email_based_username_retrieval_stage"></a>Email Based Username Retrieval Stage</h3>
+<div class="paragraph">
+<p>Stage for retrieving user&#8217;s username via email.</p>
+</div>
+<div class="paragraph">
+<p>Configuration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>name</code> – <code>"emailUsername"</code></p>
+</li>
+<li>
+<p><code>emailServiceUrl</code> – URL of the email service that will be used to send verification email</p>
+</li>
+<li>
+<p><code>emailServiceParameters</code> – additional parameters for the email service</p>
+</li>
+<li>
+<p><code>subjectTranslations</code> – map of verification email subjects for different locales</p>
+<div class="ulist">
+<ul>
+<li>
+<p>expected format: <code>Map&lt;locale, subject&gt;</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>messageTranslations</code> – map of verification email messages for different locales</p>
+<div class="ulist">
+<ul>
+<li>
+<p>expected format: <code>Map&lt;locale, message&gt;</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>mimeType</code> – verification email message MIME type</p>
+</li>
+<li>
+<p><code>from</code> – verification email sender address</p>
+</li>
+<li>
+<p><code>usernameToken</code> – string token representing where the username should be substituted</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Example configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name" : "emailUsername",
+  "emailServiceUrl" : "external/email",
+  "emailServiceParameters" : {
+    "someflag" : "true"
+  },
+  "subjectTranslations" : {
+    "en" : "Email subject in EN",
+    "fr" : "Email subject in FR"
+  },
+  "messageTranslations" : {
+    "en" : "Email message with username %username% in EN",
+    "fr" : "Email message with username %username% in FR"
+  },
+  "mimeType" : "text/plain",
+  "from" : "noreply@example.com",
+  "usernameToken" : "%username%"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_retrieve_username_stage"><a class="anchor" href="#_retrieve_username_stage"></a>Retrieve Username Stage</h3>
+<div class="paragraph">
+<p>Stage for retrieving the user&#8217;s username that is stored to process context&#8217;s <code>successAdditions</code> property.</p>
+</div>
+<div class="paragraph">
+<p>Configuration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>name</code> – <code>"retrieveUsername"</code></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Example configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name" : "retrieveUsername"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_user_details_stage"><a class="anchor" href="#_user_details_stage"></a>User Details Stage</h3>
+<div class="paragraph">
+<p>Stage responsible for storing provided user data to the process context.
+If process context already contains user email, it must match the provided email.
+If no email is provided, the user email from the process context will also be added among other user data in the process context.</p>
+</div>
+<div class="paragraph">
+<p>Configuration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>name</code> – <code>"userDetails"</code></p>
+</li>
+<li>
+<p><code>identityEmailField</code> – field name for the identity email address</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Example configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name" : "userDetails",
+  "identityEmailField" : "mail"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_user_query_stage"><a class="anchor" href="#_user_query_stage"></a>User Query Stage</h3>
+<div class="paragraph">
+<p>Stage is responsible for querying the configured identity service for a user based on the provided query fields.
+Once identified, it populates <code>mail</code> and <code>userId</code> fields in process context.</p>
+</div>
+<div class="paragraph">
+<p>Configuration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>name</code> – <code>"userQuery"</code></p>
+</li>
+<li>
+<p><code>validQueryFields</code> – list of query fields to be used when looking up the user</p>
+</li>
+<li>
+<p><code>identityServiceUrl</code> – identity service URL used to lookup the user</p>
+</li>
+<li>
+<p><code>identityIdField</code> – field name for the identity ID</p>
+</li>
+<li>
+<p><code>identityEmailField</code> – field name for the identity email address</p>
+</li>
+<li>
+<p><code>identityUsernameField</code> – field name for the identity username</p>
+</li>
+<li>
+<p><code>identityAccountStatusField</code> – field name for the identity account status</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Example configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name" : "userQuery",
+  "validQueryFields" : ["userName", "mail"],
+  "identityServiceUrl" : "managed/user",
+  "identityIdField" : "_id",
+  "identityEmailField" : "mail",
+  "identityUsernameField" : "userName",
+  "identityAccountStatusField" : "accountStatus"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_validate_active_account_stage"><a class="anchor" href="#_validate_active_account_stage"></a>Validate Active Account Stage</h3>
+<div class="paragraph">
+<p>Stage responsible for validating user account status prior to password reset.</p>
+</div>
+<div class="paragraph">
+<p>Configuration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>name</code> – <code>"validateActiveAccount"</code></p>
+</li>
+<li>
+<p><code>validStatusValue</code> – account status value that is considered valid</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Example configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name" : "validateActiveAccount",
+  "validStatusValue" : "active"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_social_user_details_stage"><a class="anchor" href="#_social_user_details_stage"></a>Social User Details Stage</h3>
+<div class="paragraph">
+<p>Stage responsible for collecting user profile details from the integrated OAuth2 or OpenID Connect social identity provider.
+It expects the <code>mail</code> field to be populated in the process context, which it uses to verify against the email address specified in the provided user object.</p>
+</div>
+<div class="paragraph">
+<p>Configuration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>name</code> – <code>"socialUserDetails"</code></p>
+</li>
+<li>
+<p><code>identityEmailField</code> – field name for the identity email address</p>
+</li>
+<li>
+<p><code>providers</code> – list of identity provider configurations</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>name</code> – unique provider name</p>
+</li>
+<li>
+<p><code>type</code> – authentication type (e.g., <code>OPENID_CONNECT</code>, <code>OAUTH</code>)</p>
+</li>
+<li>
+<p><code>icon</code> – icon HTML</p>
+</li>
+<li>
+<p><code>authorization_endpoint</code> – endpoint for authentication and authorization of a user</p>
+</li>
+<li>
+<p><code>token_endpoint</code> – endpoint for requesting access and ID tokens</p>
+</li>
+<li>
+<p><code>userinfo_endpoint</code> – endpoint for requesting user information</p>
+</li>
+<li>
+<p><code>well-known</code> – well-known endpoint for OpenID Connect configuration key-value pairs</p>
+</li>
+<li>
+<p><code>client_id</code> – OAuth client ID</p>
+</li>
+<li>
+<p><code>client_secret</code> – OAuth client secret</p>
+</li>
+<li>
+<p><code>scope</code> – OAuth scopes being requested</p>
+<div class="ulist">
+<ul>
+<li>
+<p>expected value: <code>List&lt;scope&gt;</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>authenticationId</code> – property that maps to unique user identifier</p>
+</li>
+<li>
+<p><code>propertyMap</code> – property mapping from provider fields to Wren:IDM fields (optional)</p>
+</li>
+<li>
+<p><code>enabled</code> – enabled-state</p>
+<div class="ulist">
+<ul>
+<li>
+<p>expected value: <code>true</code> / <code>false</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Example configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "name" : "socialUserDetails",
+  "identityEmailField" : "mail",
+  "providers" : [
+    {
+      "name" : "google",
+      "type" : "OPENID_CONNECT",
+      "icon" : "google",
+      "authorization_endpoint" : "authorization_endpoint",
+      "token_endpoint" : "token_endpoint",
+      "userinfo_endpoint" : "userinfo_endpoint",
+      "well-known" : "",
+      "client_id" : "",
+      "client_secret" : "",
+      "scope" : [
+        "openid",
+        "profile",
+        "email"
+      ],
+      "authenticationId" : "sub",
+      "enabled" : true
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="selfservice-predefined-processes"><a class="anchor" href="#selfservice-predefined-processes"></a>Predefined Processes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Wren:IDM comes with three out-of-the-box self-service processes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>User Registration</p>
+</li>
+<li>
+<p>Password Reset</p>
+</li>
+<li>
+<p>Forgotten Username</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In addition to the standard JSON file configuration, these processes can also be configured directly in the Admin UI.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The configuration file for each of the above predefined processes is created after the process is explicitly enabled in the Admin UI.
+When a process is enabled or disabled in Admin UI, the option is saved to the corresponding boolean property in <code>conf/ui-configuration.json</code> file.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_user_registration_process"><a class="anchor" href="#_user_registration_process"></a>User Registration Process</h3>
+<div class="paragraph">
+<p>User registration process serves to collect user data and create new user object.</p>
+</div>
+<div class="paragraph">
+<p>Corresponding property in <code>conf/ui-configuration.json</code>: <code>selfRegistration</code></p>
+</div>
+<div class="paragraph">
+<p>Configuration file: <code>conf/selfservice-registration.json</code></p>
+</div>
+<div class="listingblock">
+<div class="title">Default configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "stageConfigs" : [
+    {
+      "name" : "userDetails",
+      "identityEmailField" : "mail"
+    },
+    {
+      "name" : "emailValidation",
+      "identityEmailField" : "mail",
+      "emailServiceUrl" : "external/email",
+      "from" : "info@admin.org",
+      "subject" : "Register new account",
+      "mimeType" : "text/html",
+      "subjectTranslations" : {
+        "en" : "Register new account",
+        "fr" : "Créer un nouveau compte"
+      },
+      "messageTranslations" : {
+        "en" : "&lt;h3&gt;This is your registration email.&lt;/h3&gt;&lt;h4&gt;&lt;a href=\"%link%\"&gt;Email verification link&lt;/a&gt;&lt;/h4&gt;",
+        "fr" : "&lt;h3&gt;Ceci est votre mail d'inscription.&lt;/h3&gt;&lt;h4&gt;&lt;a href=\"%link%\"&gt;Lien de vérification email&lt;/a&gt;&lt;/h4&gt;"
+      },
+      "verificationLinkToken" : "%link%",
+      "verificationLink" : "https://localhost:8443/#register/"
+    },
+    {
+      "name" : "kbaSecurityAnswerDefinitionStage",
+      "numberOfAnswersUserMustSet" : 1,
+      "kbaConfig" : null
+    },
+    {
+      "name" : "selfRegistration",
+      "identityServiceUrl" : "managed/user"
+    }
+  ],
+  "snapshotToken" : {
+    "type" : "jwt",
+    "jweAlgorithm" : "RSAES_PKCS1_V1_5",
+    "encryptionMethod" : "A128CBC_HS256",
+    "jwsAlgorithm" : "HS256",
+    "tokenExpiry" : 1800
+  },
+  "storage" : "stateless"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Stage <code>kbaSecurityAnswerDefinitionStage</code> uses default KBA configuration from <code>conf/selfservice.kba.json</code> file.</p>
+</div>
+<div class="listingblock">
+<div class="title">Default KBA configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "kbaPropertyName" : "kbaInfo",
+  "questions" : {
+    "1" : {
+      "en" : "What's your favorite color?",
+      "en_GB" : "What's your favorite colour?",
+      "fr" : "Quelle est votre couleur préférée?"
+    },
+    "2" : {
+      "en" : "Who was your first employer?"
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_password_reset_process"><a class="anchor" href="#_password_reset_process"></a>Password Reset Process</h3>
+<div class="paragraph">
+<p>Password reset process allows users to reset their forgotten password from End User UI&#8217;s login page.</p>
+</div>
+<div class="paragraph">
+<p>Corresponding property in <code>conf/ui-configuration.json</code>: <code>passwordReset</code></p>
+</div>
+<div class="paragraph">
+<p>Configuration file: <code>conf/selfservice-reset.json</code></p>
+</div>
+<div class="listingblock">
+<div class="title">Default configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "stageConfigs" : [
+    {
+      "name" : "userQuery",
+      "validQueryFields" : [
+        "userName",
+        "mail",
+        "givenName",
+        "sn"
+      ],
+      "identityIdField" : "_id",
+      "identityEmailField" : "mail",
+      "identityUsernameField" : "userName",
+      "identityServiceUrl" : "managed/user"
+    },
+    {
+      "name" : "emailValidation",
+      "identityEmailField" : "mail",
+      "emailServiceUrl" : "external/email",
+      "from" : "info@admin.org",
+      "subject" : "Reset password email",
+      "mimeType" : "text/html",
+      "subjectTranslations" : {
+        "en" : "Reset your password",
+        "fr" : "Réinitialisez votre mot de passe"
+      },
+      "messageTranslations" : {
+        "en" : "&lt;h3&gt;Click to reset your password&lt;/h3&gt;&lt;h4&gt;&lt;a href=\"%link%\"&gt;Password reset link&lt;/a&gt;&lt;/h4&gt;",
+        "fr" : "&lt;h3&gt;Cliquez pour réinitialiser votre mot de passe&lt;/h3&gt;&lt;h4&gt;&lt;a href=\"%link%\"&gt;Mot de passe lien de réinitialisation&lt;/a&gt;&lt;/h4&gt;"
+      },
+      "verificationLinkToken" : "%link%",
+      "verificationLink" : "https://localhost:8443/#passwordReset/"
+    },
+    {
+      "name" : "kbaSecurityAnswerVerificationStage",
+      "kbaPropertyName" : "kbaInfo",
+      "identityServiceUrl" : "managed/user",
+      "numberOfQuestionsUserMustAnswer" : "1",
+      "kbaConfig" : null
+    },
+    {
+      "name" : "resetStage",
+      "identityServiceUrl" : "managed/user",
+      "identityPasswordField" : "password"
+    }
+  ],
+  "snapshotToken" : {
+    "type" : "jwt",
+    "jweAlgorithm" : "RSAES_PKCS1_V1_5",
+    "encryptionMethod" : "A128CBC_HS256",
+    "jwsAlgorithm" : "HS256",
+    "tokenExpiry" : 1800
+  },
+  "storage" : "stateless"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Stage <code>kbaSecurityAnswerVerificationStage</code> uses default KBA configuration from <code>conf/selfservice.kba.json</code> file.</p>
+</div>
+<div class="listingblock">
+<div class="title">Default KBA configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "kbaPropertyName" : "kbaInfo",
+  "questions" : {
+    "1" : {
+      "en" : "What's your favorite color?",
+      "en_GB" : "What's your favorite colour?",
+      "fr" : "Quelle est votre couleur préférée?"
+    },
+    "2" : {
+      "en" : "Who was your first employer?"
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_forgotten_username_process"><a class="anchor" href="#_forgotten_username_process"></a>Forgotten Username Process</h3>
+<div class="paragraph">
+<p>Forgotton username process allows users to retrieve their forgotten username from End User UI&#8217;s login page.</p>
+</div>
+<div class="paragraph">
+<p>Corresponding property in <code>conf/ui-configuration.json</code>: <code>forgotUsername</code></p>
+</div>
+<div class="paragraph">
+<p>Configuration file: <code>conf/selfservice-username.json</code></p>
+</div>
+<div class="listingblock">
+<div class="title">Default configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "stageConfigs" : [
+    {
+      "name" : "userQuery",
+      "validQueryFields" : [
+        "mail",
+        "givenName",
+        "sn"
+      ],
+      "identityIdField" : "_id",
+      "identityEmailField" : "mail",
+      "identityUsernameField" : "userName",
+      "identityServiceUrl" : "managed/user"
+    },
+    {
+      "name" : "emailUsername",
+      "emailServiceUrl" : "external/email",
+      "from" : "info@admin.org",
+      "mimeType" : "text/html",
+      "subjectTranslations" : {
+        "en" : "Account Information - username"
+      },
+      "messageTranslations" : {
+        "en" : "&lt;h3&gt;Username is:&lt;/h3&gt;&lt;br /&gt;%username%"
+      },
+      "usernameToken" : "%username%"
+    },
+    {
+      "name" : "retrieveUsername"
+    }
+  ],
+  "snapshotToken" : {
+    "type" : "jwt",
+    "jweAlgorithm" : "RSAES_PKCS1_V1_5",
+    "encryptionMethod" : "A128CBC_HS256",
+    "jwsAlgorithm" : "HS256",
+    "tokenExpiry" : 1800
+  },
+  "storage" : "stateless"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Copyright © 2017-<script>document.write(new Date().getFullYear());</script> Wren Security. Except where noted otherwise, the content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.</p>
+  <p>This page was built using an adapted version of the Antora default UI.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

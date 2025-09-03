@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Audit :: Wren Security Docs</title>
+    <link rel="canonical" href="https://docs.wrensecurity.org/wrenidm/latest/components/audit.html">
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/custom.css">
+    <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+    <script src="https://cdn.usefathom.com/script.js" data-site="ASVYZNXZ" defer></script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a class="logo" title="Wren Security" href="https://wrensecurity.org">
+          <img src="../../../_/img/wren.png" alt="Wren Security" width="32">
+        </a>
+        <a class="title" href="https://docs.wrensecurity.org">Wren Security Docs</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="wrenidm" data-version="6.x.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">Wren:IDM</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../getting-started.html">Getting Started</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Component Reference</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="audit.html">Audit</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="authentication.html">Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="crypto.html">Crypto</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="email.html">Email Service</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="managed.html">Managed Objects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="policy.html">Policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="provisioner.html">Provisioner</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="repository.html">Repository</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="scheduler.html">Scheduling</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="script.html">Scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="security.html">Security</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="selfservice.html">Self-service</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sync.html">Synchronization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workflow.html">Workflow</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../samples.html">Samples</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community.html">Community</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../links.html">Links</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Wren:IDM</span>
+    <span class="version">6.x.x</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../wrenam/latest/index.html">Wren:AM</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../wrenam/latest/index.html">15.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../wrends/latest/index.html">Wren:DS</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../wrends/latest/index.html">5.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">Wren:IDM</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../7.x.x/index.html">7.x.x-dev</a>
+        </li>
+        <li class="version is-current is-latest">
+          <a href="../index.html">6.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../wrenig/latest/index.html">Wren:IG</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../wrenig/latest/index.html">5.x.x</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../docs/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Wren:IDM</a></li>
+    <li><a href="index.html">Component Reference</a></li>
+    <li><a href="audit.html">Audit</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">6.x.x</button>
+  <div class="version-menu">
+    <a class="version" href="../../7.x.x/components/audit.html">7.x.x-dev</a>
+    <a class="version is-current" href="audit.html">6.x.x</a>
+  </div>
+</div>
+<div class="edit-this-page"><a href="https://github.com/WrenSecurity/wrenidm-docs/edit/6.x.x/modules/components/pages/audit.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Audit</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Audit Service</em> is responsible for collecting and logging audit events.
+Internal audit components are built on top of shared components provided by <em>Wrensec Commons</em> project.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">OSGi service class</dt>
+<dd>
+<p><code>org.forgerock.openidm.audit.impl.AuditServiceImpl</code></p>
+</dd>
+<dt class="hdlist1">OSGi persistent identifier</dt>
+<dd>
+<p><code>org.forgerock.openidm.audit</code></p>
+</dd>
+<dt class="hdlist1">Configuration file</dt>
+<dd>
+<p><code>audit.json</code></p>
+</dd>
+<dt class="hdlist1">Router mapping</dt>
+<dd>
+<p><code>/audit</code></p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Several Wren:IDM services capture user and system interactions (e.g. user authentication or object synchronization) and generate audit events that are being routed to the central <em>audit service</em>.
+Audit service then uses preconfigured audit event handlers to further process captured events (e.g. by storing them in a database table).</p>
+</div>
+<div class="paragraph">
+<p>Audit events of all types contain common attributes that can be used to filter audit events or correlate related audit events.
+These attributes include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>_id</code> – unique identification of audit event</p>
+</li>
+<li>
+<p><code>timestamp</code> – timestamp in ISO 8601 format with UTC time zone</p>
+</li>
+<li>
+<p><code>eventName</code> – type of audit event (see <a href="#audit-event-topics">Audit Event Topics</a>)</p>
+</li>
+<li>
+<p><code>transactionId</code> – identifier linking audit events to a single originating transaction</p>
+</li>
+<li>
+<p><code>userId</code> – identifier of user who invoked the given action</p>
+</li>
+<li>
+<p><code>trackingIds</code> – additional tracking identifiers to help correlating related audit events across multiple systems</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="audit-event-topics"><a class="anchor" href="#audit-event-topics"></a>Audit Event Topics</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Audit service handles the following event topics:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>access</code> – access log for CREST endpoints</p>
+</li>
+<li>
+<p><code>activity</code> – CREST actions performed on a specific object (e.g. update of a <em>managed user</em>)</p>
+</li>
+<li>
+<p><code>authentication</code> – result for an authentication attempt</p>
+</li>
+<li>
+<p><code>config</code> – configuration changes</p>
+</li>
+<li>
+<p><code>recon</code> – reconciliation events for the whole reconciliation process and every processed object</p>
+</li>
+<li>
+<p><code>sync</code> – result of object synchronization operation (implicit synchronization)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_audit_handlers"><a class="anchor" href="#_audit_handlers"></a>Audit Handlers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Audit service provides several configurable handlers that participate in processing captured audit events.
+Following output handlers are available by default:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>CsvAuditEventHandler</code> – CSV files (<em>access.csv</em>, <em>activity.csv</em>, &#8230;&#8203;)</p>
+</li>
+<li>
+<p><code>ElasticsearchAuditEventHandler</code> – Elasticsearch full-text search engine</p>
+</li>
+<li>
+<p><code>JmsAuditEventHandler</code> – Java Message Service API processor</p>
+</li>
+<li>
+<p><code>JsonAuditEventHandler</code> – JSON files (<em>acess.audit.json</em>, <em>activity.audit.json</em>, &#8230;&#8203;)</p>
+</li>
+<li>
+<p><code>RepositoryAuditEventHandler</code> – tables in Wren:IDM database</p>
+</li>
+<li>
+<p><code>RouterAuditEventHandler</code> – any internal CREST API endpoint</p>
+</li>
+<li>
+<p><code>SplunkAuditEventHandler</code> – Splunk system</p>
+</li>
+<li>
+<p><code>SyslogAuditEventHandler</code> – Syslog server through Syslog protocol</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For more information see <a href="https://github.com/WrenSecurity/wrensec-commons/tree/7a02d7913209021304a93f12793010c20bd58375/audit" target="_blank" rel="noopener">audit</a> module in <code>wrensec-commons</code> GitHub repository.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuration"><a class="anchor" href="#_configuration"></a>Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The audit service is configured through <code>audit.json</code> file in <code>project/conf</code> directory.
+The following configuration properties are available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>auditServiceConfig</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>handlerForQueries</code> – name of the audit log query handler (i.e. handler that will process audit log queries)</p>
+</li>
+<li>
+<p><code>availableAuditEventHandlers</code> – array of available audit handlers</p>
+</li>
+<li>
+<p><code>filterPolicies</code> – audit event filtering policies (policy determines whether audit event will be processed or not)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>eventHandlers</code> – audit event handler configuration</p>
+</li>
+<li>
+<p><code>eventTopics</code> – configuration of event topics (e.g. ignored actions / fields for the topic)</p>
+</li>
+<li>
+<p><code>exceptionFormatter</code> – script for formatting exceptions to be stored in audit events</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example of audit service configuration with two handlers (<code>JsonAuditEventHandler</code> and <code>RepositoryAuditEventHandler</code>):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "auditServiceConfig" : {
+    "handlerForQueries" : "repo",
+    "availableAuditEventHandlers" : [
+      "org.forgerock.audit.handlers.csv.CsvAuditEventHandler",
+      "org.forgerock.audit.handlers.elasticsearch.ElasticsearchAuditEventHandler",
+      "org.forgerock.audit.handlers.jms.JmsAuditEventHandler",
+      "org.forgerock.audit.handlers.json.JsonAuditEventHandler",
+      "org.forgerock.openidm.audit.impl.RepositoryAuditEventHandler",
+      "org.forgerock.openidm.audit.impl.RouterAuditEventHandler",
+      "org.forgerock.audit.handlers.splunk.SplunkAuditEventHandler",
+      "org.forgerock.audit.handlers.syslog.SyslogAuditEventHandler"
+    ],
+    "filterPolicies" : {
+      "value" : {
+        "excludeIf" : [
+          "/access/http/request/headers/Authorization",
+          "/access/http/request/headers/X-OpenIDM-Password",
+          "/access/http/request/cookies/session-jwt",
+          "/access/http/response/headers/Authorization",
+          "/access/http/response/headers/X-OpenIDM-Password"
+        ],
+        "includeIf" : [ ]
+      }
+    }
+  },
+  "eventHandlers" : [
+    {
+      "class" : "org.forgerock.audit.handlers.json.JsonAuditEventHandler",
+      "config" : {
+        "name" : "json",
+        "logDirectory" : "&amp;{launcher.working.location}/audit",
+        "buffering" : {
+          "maxSize" : 100000,
+          "writeInterval" : "100 millis"
+        },
+        "topics" : [
+          "access",
+          "activity",
+          "recon",
+          "sync",
+          "authentication",
+          "config"
+        ]
+      }
+    },
+    {
+      "class" : "org.forgerock.openidm.audit.impl.RepositoryAuditEventHandler",
+      "config" : {
+        "name" : "repo",
+        "topics" : [
+          "access",
+          "activity",
+          "recon",
+          "sync",
+          "authentication",
+          "config"
+        ]
+      }
+    }
+  ],
+  "eventTopics" : {
+    "config" : {
+      "filter" : {
+        "actions" : [
+          "create",
+          "update",
+          "delete",
+          "patch",
+          "action"
+        ]
+      }
+    },
+    "activity" : {
+      "filter" : {
+        "actions" : [
+          "create",
+          "update",
+          "delete",
+          "patch",
+          "action"
+        ]
+      },
+      "watchedFields" : [ ],
+      "passwordFields" : [
+        "password"
+      ]
+    }
+  },
+  "exceptionFormatter" : {
+    "type" : "text/javascript",
+    "file" : "bin/defaults/script/audit/stacktraceFormatter.js"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>With the preceding configuration audit event logs will be stored in the Wren:IDM database and also in the JSON files (located in <code>audit</code> directory).</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Copyright © 2017-<script>document.write(new Date().getFullYear());</script> Wren Security. Except where noted otherwise, the content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.</p>
+  <p>This page was built using an adapted version of the Antora default UI.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

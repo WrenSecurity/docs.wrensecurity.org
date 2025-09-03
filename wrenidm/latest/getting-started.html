@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Getting Started :: Wren Security Docs</title>
+    <link rel="canonical" href="https://docs.wrensecurity.org/wrenidm/latest/getting-started.html">
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="stylesheet" href="../../_/css/custom.css">
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+    <script src="https://cdn.usefathom.com/script.js" data-site="ASVYZNXZ" defer></script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a class="logo" title="Wren Security" href="https://wrensecurity.org">
+          <img src="../../_/img/wren.png" alt="Wren Security" width="32">
+        </a>
+        <a class="title" href="https://docs.wrensecurity.org">Wren Security Docs</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="wrenidm" data-version="6.x.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="index.html">Wren:IDM</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">Overview</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="getting-started.html">Getting Started</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="components/index.html">Component Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="components/audit.html">Audit</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="components/authentication.html">Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="components/crypto.html">Crypto</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="components/email.html">Email Service</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="components/managed.html">Managed Objects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="components/policy.html">Policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="components/provisioner.html">Provisioner</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="components/repository.html">Repository</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="components/scheduler.html">Scheduling</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="components/script.html">Scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="components/security.html">Security</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="components/selfservice.html">Self-service</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="components/sync.html">Synchronization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="components/workflow.html">Workflow</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="samples.html">Samples</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="community.html">Community</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="links.html">Links</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Wren:IDM</span>
+    <span class="version">6.x.x</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../wrenam/latest/index.html">Wren:AM</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../wrenam/latest/index.html">15.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../wrends/latest/index.html">Wren:DS</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../wrends/latest/index.html">5.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">Wren:IDM</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../7.x.x/index.html">7.x.x-dev</a>
+        </li>
+        <li class="version is-current is-latest">
+          <a href="index.html">6.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../wrenig/latest/index.html">Wren:IG</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../wrenig/latest/index.html">5.x.x</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../docs/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Wren:IDM</a></li>
+    <li><a href="getting-started.html">Getting Started</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">6.x.x</button>
+  <div class="version-menu">
+    <a class="version" href="../7.x.x/getting-started.html">7.x.x-dev</a>
+    <a class="version is-current" href="getting-started.html">6.x.x</a>
+  </div>
+</div>
+<div class="edit-this-page"><a href="https://github.com/WrenSecurity/wrenidm-docs/edit/6.x.x/modules/ROOT/pages/getting-started.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Getting Started</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can get Wren:IDM application in couple of ways.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_download_binary_release"><a class="anchor" href="#_download_binary_release"></a>Download binary release</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The easiest way to get the Wren:IDM is to download the latest binary <a href="https://github.com/WrenSecurity/wrenidm/releases" target="_blank" rel="noopener">release</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_docker_image"><a class="anchor" href="#_docker_image"></a>Docker image</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can also run Wren:IDM in a Docker container. Official Wren:IDM Docker images can be found on <a href="https://hub.docker.com/r/wrensecurity/wrenidm" target="_blank" rel="noopener">Docker Hub</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_build_the_source_code"><a class="anchor" href="#_build_the_source_code"></a>Build the source code</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The last but not least you can create your own build from the source code. Manual how to build the source code can be found <a href="https://github.com/WrenSecurity/wrenidm/blob/main/README.md#build-the-source-code" target="_blank" rel="noopener">here</a>.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Copyright © 2017-<script>document.write(new Date().getFullYear());</script> Wren Security. Except where noted otherwise, the content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.</p>
+  <p>This page was built using an adapted version of the Antora default UI.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

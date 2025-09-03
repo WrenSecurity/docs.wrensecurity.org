@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Repository :: Wren Security Docs</title>
+    <link rel="canonical" href="https://docs.wrensecurity.org/wrenidm/latest/components/repository.html">
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/custom.css">
+    <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+    <script src="https://cdn.usefathom.com/script.js" data-site="ASVYZNXZ" defer></script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a class="logo" title="Wren Security" href="https://wrensecurity.org">
+          <img src="../../../_/img/wren.png" alt="Wren Security" width="32">
+        </a>
+        <a class="title" href="https://docs.wrensecurity.org">Wren Security Docs</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="wrenidm" data-version="7.x.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">Wren:IDM</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../getting-started.html">Getting Started</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Component Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="audit.html">Audit</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="authentication.html">Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="crypto.html">Crypto</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="email.html">Email Service</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="managed.html">Managed Objects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="policy.html">Policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="provisioner.html">Provisioner</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="repository.html">Repository</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="scheduler.html">Scheduling</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="script.html">Scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="security.html">Security</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="selfservice.html">Self-service</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="sync.html">Synchronization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="workflow.html">Workflow</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Deployment Guide</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../deployment/upgrade.html">Upgrade Guide</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../samples.html">Samples</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community.html">Community</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../links.html">Links</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Wren:IDM</span>
+    <span class="version">7.x.x-dev</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../wrenam/latest/index.html">Wren:AM</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../wrenam/latest/index.html">15.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../wrends/latest/index.html">Wren:DS</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../wrends/latest/index.html">5.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../latest/index.html">Wren:IDM</a>
+      <ul class="versions">
+        <li class="version is-current">
+          <a href="../index.html">7.x.x-dev</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../latest/index.html">6.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../wrenig/latest/index.html">Wren:IG</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../wrenig/latest/index.html">5.x.x</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../docs/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Wren:IDM</a></li>
+    <li><a href="index.html">Component Reference</a></li>
+    <li><a href="repository.html">Repository</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">7.x.x-dev</button>
+  <div class="version-menu">
+    <a class="version is-current" href="repository.html">7.x.x-dev</a>
+    <a class="version" href="../../latest/components/repository.html">6.x.x</a>
+  </div>
+</div>
+<div class="edit-this-page"><a href="https://github.com/WrenSecurity/wrenidm-docs/edit/main/modules/components/pages/repository.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Repository</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <em>Repository Service</em> components are responsible for mapping the JSON data model to and from a persistent storage via CREST semantics.
+The main implementation for the repository service is <code>JDBCRepoService</code> which uses <em>JDBC data source</em> and <em>table handlers</em> that map objects to and from database relations.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_jdbc_data_source_service"><a class="anchor" href="#_jdbc_data_source_service"></a>JDBC data source service</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The JDBC data source has its own dedicated service and configuration.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">OSGi service class</dt>
+<dd>
+<p><code>org.forgerock.openidm.datasource.jdbc.impl.JDBCDataSourceService</code></p>
+</dd>
+<dt class="hdlist1">OSGi persistent identifier</dt>
+<dd>
+<p><code>org.forgerock.openidm.datasource.jdbc</code></p>
+</dd>
+<dt class="hdlist1">Configuration file</dt>
+<dd>
+<p><code>datasource.jdbc-[name].json</code></p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>The data source can be of three basic types:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>plain JDBC – basic data source initialised and managed by the IDM</p>
+</li>
+<li>
+<p>JNDI lookup – data source provided by the container and obtained through the JNDI mechanism</p>
+</li>
+<li>
+<p>OSGI lookup – data source provided by the container and obtained through OSGi service lookup</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The JSON configuration differs slightly depending on the data source type, as shown in the following sections.</p>
+</div>
+<div class="paragraph">
+<p>The name of the OSGi service instance is completely arbitrary (e.g. <code>datasource.jdbc-helloworld.json</code>).
+The data source name is then referenced from the configuration of other OSGi services that actually use the data source directly.
+It is possible to define any number of data source service instances in this way.
+However it makes sense to define at most two data sources – one for the identity data and possibly a separate one for the workflow data.
+Most implementations would use just a single data source for both use cases.</p>
+</div>
+<div class="sect2">
+<h3 id="_simple_jdbc_data_source"><a class="anchor" href="#_simple_jdbc_data_source"></a>Simple JDBC data source</h3>
+<div class="paragraph">
+<p>A simple JDBC data source can be configured by simply using a target JDBC driver.</p>
+</div>
+<div class="paragraph">
+<p>Available configuration keys for all JDBC based configurations are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>databaseName</code> – default catalogue (schema) name</p>
+</li>
+<li>
+<p><code>driverClass</code> – JDBC database driver class name</p>
+</li>
+<li>
+<p><code>jdbcUrl</code> – connection URL</p>
+</li>
+<li>
+<p><code>username</code> – connection username</p>
+</li>
+<li>
+<p><code>password</code> – connection password</p>
+</li>
+<li>
+<p><code>connectionTimeout</code> – connection timeout in milliseconds</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Additional properties are available for non-pooling data sources (these are specific for DB2):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>kerberosServerPrincipal</code> – name of the Kerberos principal</p>
+</li>
+<li>
+<p><code>securityMechanism</code> – specifies the DRDA security mechanism</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Data source connection pooling can be configured using the <code>connectionPool</code> object property.
+The nested <code>type</code> property is used to select the connection pool implementation – only HikariCP is currently supported.
+Any additional nested <code>connectionPool</code> object properties are mapped to the connection pool configuration via reflection.
+Refer to HikariCP&#8217;s <a href="https://www.javadoc.io/doc/com.zaxxer/HikariCP/3.2.0/com/zaxxer/hikari/HikariConfig.html"><code>HikariConfig</code></a> JavaDoc for information on available configuration keys.</p>
+</div>
+<div class="exampleblock">
+<div class="title">Example 1. Connection pool data source configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "driverClass" : "org.postgresql.Driver",
+  "jdbcUrl" : "jdbc:postgresql://&amp;{openidm.repo.host}:&amp;{openidm.repo.port}/idmdb",
+  "username" : "wrenidm",
+  "password" : "wrenidm",
+  "connectionTimeout" : 30000,
+  "connectionPool" : {
+    "type" : "hikari",
+    "minimumIdle" : 20,
+    "maximumPoolSize" : 50
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_jndi_based_data_source"><a class="anchor" href="#_jndi_based_data_source"></a>JNDI based data source</h3>
+<div class="paragraph">
+<p>Configuring a JNDI based data source is simply a matter of defining the JNDI lookup URL that will be used to retrieve the data source via JNDI.</p>
+</div>
+<div class="exampleblock">
+<div class="title">Example 2. JNDI based data source configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "jndiName" : "java:com/eng/jdbc/MySQLDB"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_osgi_based_data_source"><a class="anchor" href="#_osgi_based_data_source"></a>OSGi based data source</h3>
+<div class="paragraph">
+<p>Configuring an OSGi based data source consists only of defining an OSGi service lookup string (see <a href="https://github.com/WrenSecurity/wrenidm/blob/main/openidm-util/src/main/java/org/forgerock/openidm/osgi/OsgiName.java#L165:"><code>OsgiName</code></a> for the details on the string format) that will be used to obtain the data source via the OSGi service lookup.</p>
+</div>
+<div class="exampleblock">
+<div class="title">Example 3. OSGi based data source configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "osgiName" : "osgi:service/javax.sql.DataSource/(osgi.jndi.service.name=jdbc/wrenidm)"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_jdbc_repository_service"><a class="anchor" href="#_jdbc_repository_service"></a>JDBC repository service</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The JDBC Repository Service is the main persistence service component for the IDM platform.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">OSGi service class</dt>
+<dd>
+<p><code>org.forgerock.openidm.repo.jdbc.impl.JDBCRepoService</code></p>
+</dd>
+<dt class="hdlist1">OSGi persistent identifier</dt>
+<dd>
+<p><code>org.forgerock.openidm.repo.jdbc</code></p>
+</dd>
+<dt class="hdlist1">Configuration file</dt>
+<dd>
+<p><code>repo.jdbc.json</code></p>
+</dd>
+<dt class="hdlist1">Router mapping</dt>
+<dd>
+<p><code>/repo/*</code></p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>There are two strategies for mapping JSON data model to a relational database data model:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>generic table mapping</strong> – stores objects as a single stringified JSON value</p>
+</li>
+<li>
+<p><strong>explicit table mapping</strong> – stores object properties as individual table column values</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The generic table mapping strategy maps the JSON data model as a single stringified JSON value into a table with a predefined structure.
+The explicit table mapping strategy allows object properties to be mapped as table column values.
+Most of the configuration and logic for the repository service is divided betweed these two strategies.</p>
+</div>
+<div class="paragraph">
+<p>The content of the <code>repo.jdbc.json</code> configuration file has the following structure:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>useDataSource</code> – instance name of the data source service to use</p>
+</li>
+<li>
+<p><code>dbType</code> – type of database engine (see <a href="#repo-supported-dbs">Supported database engines</a>)</p>
+</li>
+<li>
+<p><code>maxBatchSize</code> – maximum number of SQL updates allowed in a single transaction</p>
+</li>
+<li>
+<p><code>maxTxRetry</code> – maximum number of SQL execution retries when a retriable error is encountered (e.g. timeout) occurs</p>
+</li>
+<li>
+<p><code>queries</code> – predefined database SQL queries (see <a href="#repo-predefined-queries">Predefined table queries</a>)</p>
+</li>
+<li>
+<p><code>commands</code> – predefined database SQL commands (see <a href="#repo-predefined-commands">Predefined table commands</a>)</p>
+</li>
+<li>
+<p><code>resourceMapping</code> – JSON data model to database table and column mapping definition (see <a href="#repo-resource-mapping">Resource table mapping</a>)</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Overview of the JDBC repository configuration structure</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "useDataSource" : "default",
+  "maxBatchSize" : 100,
+  "maxTxRetry" : 5,
+  "queries" : {
+    "genericTables" : {
+      // key-value map of SQL queries
+    },
+    "explicitTables" : {
+      // key-value map of SQL queries
+    }
+  },
+  "commands" : {
+    "genericTables" : {
+      // key-value map of SQL commands
+    },
+    "explicitTables" : {
+      // key-value map of SQL commands
+    }
+  },
+  "resourceMapping" : {
+    "default" : {
+      // default generic mapping
+    },
+    "genericMapping" : {
+      // generic table mapping declarations
+    },
+    "explicitMapping" : {
+      // explicit table mapping declarations
+    }
+  }
+}</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="repo-predefined-queries"><a class="anchor" href="#repo-predefined-queries"></a>Predefined table queries</h3>
+<div class="paragraph">
+<p>SQL queries (i.e. <code>SELECT</code> statements) are defined separately for generically and explicitly mapped tables.
+All predefined queries support basic identifier interpolation (i.e. replacing <code>${name}</code> with identifier string) and named parameter resolution (i.e. using <code>${name}</code> as SQL parameter references).</p>
+</div>
+<div class="paragraph">
+<p>Supported identifier placeholders for generic table queries are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>${_dbSchema}</code> – database catalogue / schema name</p>
+</li>
+<li>
+<p><code>${_mainTable}</code> – main table name (defined by the resource mapping)</p>
+</li>
+<li>
+<p><code>${_propTable}</code> – name of the helper table used to index JSON object property values (defined by the resource mapping)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Supported identifier placeholders for the explicit table queries are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>${_dbSchema}</code> – database catalogue / schema name</p>
+</li>
+<li>
+<p><code>${_table}</code> – mapped table name (defined by the resource mapping)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The rest of the token placeholders (<code>${token}</code>) are treated as named parameters.
+Each parameter can have the following token structure – <code>$\{type-hint:param-name}</code>.
+The type hint can specify if the parameter is list based parameter (e.g. <code>$\{list:ids}</code>) and/or specify data type of the parameter.
+The only supported data type hint is for <em>integer</em> parameters – <code>$\{int:foobar}</code>.</p>
+</div>
+<div class="paragraph">
+<p>Some of the named parameters are automatically available based on the content of the CREST request:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>${_resource}</code> – object type name (e.g. <code>managed/user</code>)</p>
+</li>
+<li>
+<p><code>${_pageSize}</code> – result page size (i.e. maximum number of objects returned)</p>
+</li>
+<li>
+<p><code>${_pagedResultsOffset}</code> – paged results offset (i.e. how many matching results should be skipped)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The rest of the named parameters are mapped from the CREST query parameters.
+Failure to provide all the named parameters defined in the query will result in a <em>400 Bad Request</em> error response.</p>
+</div>
+<div class="exampleblock">
+<div class="title">Example 4. Table queries configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  // ...
+  "queries" : {
+    "genericTables" : {
+      "query-all" : "SELECT fullobject FROM ${_dbSchema}.${_mainTable} obj OFFSET ${int:_pagedResultsOffset} LIMIT ${int:_pageSize}"
+    },
+    "explicitTables" : {
+      "query-all-ids" : "SELECT objectid FROM ${_dbSchema}.${_table}",
+      "query-by-name" : "SELECT * FROM ${_dbSchema}.${_table} WHERE name = ${name}"
+    }
+  }
+  // ...
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="repo-predefined-commands"><a class="anchor" href="#repo-predefined-commands"></a>Predefined table commands</h3>
+<div class="paragraph">
+<p>Predefined SQL commands are pretty much the same as predefined SQL queries, except that commands usually represent a modification operation and don&#8217;t return data.
+SQL commands support the same set of identifier placeholders and named parameter placeholders as SQL queries (see the previous section for more details).</p>
+</div>
+<div class="exampleblock">
+<div class="title">Example 5. Table commands configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  // ...
+  "commands" : {
+    "genericTables" : {
+      "delete-by-id" : "DELETE FROM ${_dbSchema}.${_mainTable} WHERE objectid = ${id}"
+    },
+    "explicitTables" : {
+      "delete-by-id" : "DELETE FROM ${_dbSchema}.${_table} WHERE objectid = ${id}"
+    }
+  }
+  // ...
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="repo-resource-mapping"><a class="anchor" href="#repo-resource-mapping"></a>Resource table mapping</h3>
+<div class="paragraph">
+<p>The definition of how the JSON based data model is mapped to the table column data model is defined in the <code>resourceMapping</code> configuration section.
+The overall format of the configuration differs between generic table mapping (storing objects as stringified JSON value) and explicit table mapping (storing object properties as table column values).</p>
+</div>
+<div class="paragraph">
+<p>When the JDBC repository service handles a request for a particular resource, it maps the resource type to a predefined table handler.
+If no such handler is found, it uses the default generic handler definition.</p>
+</div>
+<div class="listingblock">
+<div class="title">Overview of resource mapping configuration section structure</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  // ...
+  "resourceMapping" : {
+    "default" : {
+      // this is definition of default generic table mapping
+    },
+    "genericMapping" : {
+      "[resource-type]" : { // it is possible to use wildcards (e.g. `foobar/*`)
+        // generic table mapping definition
+      },
+      // ...
+    },
+    "explicitMapping" : {
+      "[resource-type]" : {
+        // explicit table mapping definition
+      }
+      // ...
+    }
+  }
+  // ...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following sections describe each strategies and its configuration in more detail.</p>
+</div>
+<div class="sect3">
+<h4 id="_generic_table_mapping"><a class="anchor" href="#_generic_table_mapping"></a>Generic table mapping</h4>
+<div class="paragraph">
+<p>Generic mapping stores the stringified JSON object as a single value.
+The following columns are required in a generic mapping table:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Generic table structure</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 22.2222%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+<th class="tableblock halign-left valign-top">Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>id</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INTEGER</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">autogenerated row identifier</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>objecttype_id</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INTEGER</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reference to the object type table</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rev</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>VARCHAR(36)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">object revision for optimistic locking</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>objectid</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>VARCHAR(255)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">object identifier</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fullobject</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TEXT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">serialized JSON object</p></td>
+</tr>
+</tbody>
+</table>
+<div class="exampleblock">
+<div class="title">Example 6. Generic mapping example</div>
+<div class="content">
+<div class="listingblock">
+<div class="title">JSON data model</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "id" : "bc7142b9-aabc-4d9d-a971-eea926acbb15",
+  "rev" : 0,
+  "name" : "John Doe",
+  "mail" : "john.doe@example.com"
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Database table model</div>
+<div class="content">
+<pre>| id | objecttypes_id | objectid                             | rev | fullobject |
+| 7  | 1              | bc7142b9-aabc-4d9d-a971-eea926acbb15 | 0   | {"id":bc7142b9-aabc-4d9d-a971-eea926acbb15","rev":0,"name":"John Doe","mail":"john.doe@example.com"} |</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>From the database perspective the object state is just a text-based value.
+The repository service needs to be able to filter (query) stored objects.
+Therefore, this strategy uses an additional property table to index selected property values.
+Databases that support indexing and querying of JSON data (PostgreSQL) don&#8217;t need such table.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Additional indexed table for object properties</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 22.2222%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+<th class="tableblock halign-left valign-top">Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>[mainTable]_id</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INTEGER</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reference to the <em>main table</em> identifier</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>propkey</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>VARCHAR(255)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON pointer to the indexed property</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>proptype</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>VARCHAR(32)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">java class name of the property value</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>propvalue</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TEXT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stringified property value</p></td>
+</tr>
+</tbody>
+</table>
+<div class="exampleblock">
+<div class="title">Example 7. Data stored inside auxiliary properties table</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre>| genericobjects_id | propkey | proptype         | propvalue            |
+| 7                 | /name   | java.lang.String | John Doe             |
+| 7                 | /mail   | java.lang.String | john.doe@example.com |</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Which properties should be indexed (i.e. stored in the auxiliary properties table) can be configured in the table mapping configuration.</p>
+</div>
+<div class="paragraph">
+<p>Generic table mapping configurations have the following structure:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>mainTable</code> – name of the main table storing the object data</p>
+</li>
+<li>
+<p><code>propertiesTable</code> – name of the auxiliary properties table</p>
+</li>
+<li>
+<p><code>searchableDefault</code> – boolean property indicating whether each property should be stored in the auxiliary table (and thus can be used in resource filtering)</p>
+</li>
+<li>
+<p><code>properties</code> – configuration for individual properties or set of properties defined by a JSON pointer</p>
+</li>
+<li>
+<p><code>searchable</code> – whether properties defined by the JSON pointer should be indexed (i.e. stored in the auxiliary table)</p>
+</li>
+</ul>
+</div>
+<div class="exampleblock">
+<div class="title">Example 8. Sample generic table configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "mainTable" : "genericobjects",
+  "propertiesTable" : "genericobjectproperties",
+  "searchableDefault" : true,
+  "properties" : {
+    "/certificate" : {
+      "searchable" : false
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Each database engine has its own limit on the size of indexed values.
+Long values may be truncated to a shorter version (2000 characters by default) before indexing.
+This means that filters such as <em>equals</em>, <em>contains</em> or <em>ends-with</em> might not work as expected.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_explicit_table_mapping"><a class="anchor" href="#_explicit_table_mapping"></a>Explicit table mapping</h4>
+<div class="paragraph">
+<p>The explicit table mapping strategy allows object properties to be mapped as table column values.
+The mapping is based on JSON pointers, so it is possible to map nested properties as column values as well.</p>
+</div>
+<div class="paragraph">
+<p>JSON properties can be stored as stringified values or as native database value types (e.g. storing decimal numbers as <code>NUMERIC</code> or boolean values as <code>TINYINT</code>).</p>
+</div>
+<div class="paragraph">
+<p>Explicit table mapping configurations have the following structure:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>table</code> – name of the target table</p>
+</li>
+<li>
+<p><code>objectToColumn</code> – mapping of JSON property (defined by JSON pointer) to a table column</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>Object to column</em> is always a JSON map with JSON pointers as keys and values as one of the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>simple string value specifying the target column name (then the stored value will always be stringified JSON value)</p>
+</li>
+<li>
+<p>array value – <code>[columnName, valueType]</code> or <code>[columnName, valueType, javaType]</code> (see next bullet point)</p>
+</li>
+<li>
+<p>object map with <code>column</code>, <code>valueType</code> and <code>javaType</code> properties</p>
+</li>
+<li>
+<p><code>column</code> – target column name</p>
+</li>
+<li>
+<p><code>valueType</code> – type of the JSON value (one of <code>STRING</code>, <code>NUMBER</code>, <code>BOOLEAN</code>, <code>JSON_MAP</code> or <code>JSON_LIST</code>)</p>
+</li>
+<li>
+<p><code>javaType</code> – class name used within JDBC (required for native numeric type mapping)</p>
+</li>
+</ul>
+</div>
+<div class="exampleblock">
+<div class="title">Example 9. Sample explicit table configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "managed/user" : {
+  "table" : "manageduser",
+  "objectToColumn" : {
+      "_id" : "objectid",
+      "_rev" : "rev",
+      "name" : "name",
+      "password" : "pwd",
+      "workforceid" : [ "workforceid", "NUMBER", "java.lang.Integer" ],
+      "enabled" : { "column" : "enabled", "type" : "BOOLEAN" }
+    }
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+When using native database types for numeric values, make sure that the data is being read as the correct Java type.
+Failure to do so may result in phantom changes being reported in the audit log or unnecessary IDM synchronisation.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Only two columns in the target tables are required for explicit mapping:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Generic table structure</caption>
+<colgroup>
+<col style="width: 22.2222%;">
+<col style="width: 22.2222%;">
+<col style="width: 55.5556%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column</th>
+<th class="tableblock halign-left valign-top">Data type</th>
+<th class="tableblock halign-left valign-top">Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>objectid</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>VARCHAR(255)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">object identifier</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rev</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>VARCHAR(36)</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">object revision for optimistic locking</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="repo-supported-dbs"><a class="anchor" href="#repo-supported-dbs"></a>Supported database engines</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following database engines with their SQL dialects and data types are supported as target persistent storage:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Supported database engines</caption>
+<colgroup>
+<col style="width: 7.6923%;">
+<col style="width: 23.0769%;">
+<col style="width: 15.3846%;">
+<col style="width: 53.8462%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuration code</th>
+<th class="tableblock halign-left valign-top">Database name</th>
+<th class="tableblock halign-left valign-top">Supported version</th>
+<th class="tableblock halign-left valign-top">Additional information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DB2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IBM Db2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">11+</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">H2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">H2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.2+</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used as the default in-memory database engine for demonstration purposes (not for production use).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SQLSERVER</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Microsoft SQL Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2019+</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MYSQL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MySQL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8+</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ORACLE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oracle</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">21+</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">POSTGRESQL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PostgreSQL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10+</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preferred production database with full JSON data model support.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Copyright © 2017-<script>document.write(new Date().getFullYear());</script> Wren Security. Except where noted otherwise, the content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.</p>
+  <p>This page was built using an adapted version of the Antora default UI.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

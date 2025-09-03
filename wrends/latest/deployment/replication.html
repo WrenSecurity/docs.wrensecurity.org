@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Replication :: Wren Security Docs</title>
+    <link rel="canonical" href="https://docs.wrensecurity.org/wrends/latest/deployment/replication.html">
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/custom.css">
+    <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+    <script src="https://cdn.usefathom.com/script.js" data-site="ASVYZNXZ" defer></script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a class="logo" title="Wren Security" href="https://wrensecurity.org">
+          <img src="../../../_/img/wren.png" alt="Wren Security" width="32">
+        </a>
+        <a class="title" href="https://docs.wrensecurity.org">Wren Security Docs</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="wrends" data-version="5.x.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">Wren:DS</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../getting-started.html">Getting Started</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../components/index.html">Component Reference</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Deployment Guide</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="hardening.html">Security Hardening</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="logging.html">Logging</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="replication.html">Replication</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community.html">Community</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../links.html">Links</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Wren:DS</span>
+    <span class="version">5.x.x</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../wrenam/latest/index.html">Wren:AM</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../wrenam/latest/index.html">15.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../index.html">Wren:DS</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">5.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../wrenidm/latest/index.html">Wren:IDM</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../wrenidm/7.x.x/index.html">7.x.x-dev</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../../wrenidm/latest/index.html">6.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../wrenig/latest/index.html">Wren:IG</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../wrenig/latest/index.html">5.x.x</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../docs/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Wren:DS</a></li>
+    <li>Deployment Guide</li>
+    <li><a href="replication.html">Replication</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="https://github.com/WrenSecurity/wrends-docs/edit/main/modules/deployment/pages/replication.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Replication</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Replication is used to automatically synchronize data between two or more directory server instances.
+The <em>dsreplication</em> command works over SSL and uses the administration connector.
+The command can be used in no-prompt or interactive mode.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_enable_replication"><a class="anchor" href="#_enable_replication"></a>Enable Replication</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>First enable replication by using the dsreplication subcommand <em>enable</em>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">./dsreplication enable --no-prompt --trustAll --baseDN dc=example,dc=com \
+        --adminUID $ADMIN_UID --adminPassword $ADMIN_PASSWORD \
+        --host1 $HOSTNAME1 --port1 4444 --bindDN1 "cn=Directory Manager" \
+        --bindPassword1 $PASSWORD1 --replicationPort1 8989 \
+        --host2 $HOSTNAME2 --port2 4444 --bindDN2 "cn=Directory Manager" \
+        --bindPassword2 $PASSWORD2 --replicationPort2 8989</code></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Parameters have to be adjusted based on your environment settings.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>In case no Global Administator (<code>--adminUID</code>) was previously defined for none of the servers, it will be crated using the provided data.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <em>ADMIN_UID</em> and <em>ADMIN_PASSWORD</em> variables refer to the Global Administrator, which exists in the <em>cn=Administrators, cn=admin data</em> subtree.
+You can take advantage of the <em>ldapsearch</em> command to view the Global Administrator entry:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">./ldapsearch --hostname $HOSTNAME1 --port 4444 --bindDN "cn=Directory Manager" --bindPassword $PASSWORD \
+        --useSSL --baseDN "cn=Administrators,cn=admin data" --searchScope sub "(objectclass=*)"</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If you use replication on two or more server instances already, this subcommand updates the configuration for each server of the replication topology.
+Therefore it is crucial to execute the subcommand once for each of the server instances.</p>
+</div>
+<div class="paragraph">
+<p>For further information about subcommand options use the <em>./dsreplication enable --help</em> command:</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_initialize_replication"><a class="anchor" href="#_initialize_replication"></a>Initialize Replication</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once the replication is enabled the data on the destination directory server needs to be initialized.
+Use the <em>initialize</em> subcommand and specify base DN to replicate the contents from the source server instance.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">./dsreplication initialize --trustAll --no-prompt --baseDN dc=example,dc=com \
+        --adminUID $ADMIN_UID --adminPassword $ADMIN_PASSWORD \
+        --hostSource $HOSTNAME1 --portSource 4444 \
+        --hostDestination $HOSTNAME2 --portDestination 4444</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you use replication on two or more server instances, you can take advantage of the <em>initialize-all</em> subcommand, which initializes the data on all the directory servers in the topology.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Copyright © 2017-<script>document.write(new Date().getFullYear());</script> Wren Security. Except where noted otherwise, the content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.</p>
+  <p>This page was built using an adapted version of the Antora default UI.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

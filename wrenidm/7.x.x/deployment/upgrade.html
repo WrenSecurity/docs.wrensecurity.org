@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Upgrade Guide :: Wren Security Docs</title>
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <link rel="stylesheet" href="../../../_/css/custom.css">
+    <link rel="icon" href="../../../favicon.ico" type="image/x-icon">
+    <script src="https://cdn.usefathom.com/script.js" data-site="ASVYZNXZ" defer></script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a class="logo" title="Wren Security" href="https://wrensecurity.org">
+          <img src="../../../_/img/wren.png" alt="Wren Security" width="32">
+        </a>
+        <a class="title" href="https://docs.wrensecurity.org">Wren Security Docs</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="wrenidm" data-version="7.x.x">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../index.html">Wren:IDM</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../getting-started.html">Getting Started</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../components/index.html">Component Reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../components/audit.html">Audit</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../components/authentication.html">Authentication</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../components/crypto.html">Crypto</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../components/email.html">Email Service</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../components/managed.html">Managed Objects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../components/policy.html">Policies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../components/provisioner.html">Provisioner</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../components/repository.html">Repository</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../components/scheduler.html">Scheduling</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../components/script.html">Scripts</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../components/security.html">Security</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../components/selfservice.html">Self-service</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../components/sync.html">Synchronization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../components/workflow.html">Workflow</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Deployment Guide</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="upgrade.html">Upgrade Guide</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../samples.html">Samples</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../community.html">Community</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../links.html">Links</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Wren:IDM</span>
+    <span class="version">7.x.x-dev</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../../wrenam/latest/index.html">Wren:AM</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../wrenam/latest/index.html">15.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../wrends/latest/index.html">Wren:DS</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../wrends/latest/index.html">5.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="../../latest/index.html">Wren:IDM</a>
+      <ul class="versions">
+        <li class="version is-current">
+          <a href="../index.html">7.x.x-dev</a>
+        </li>
+        <li class="version is-latest">
+          <a href="../../latest/index.html">6.x.x</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../../wrenig/latest/index.html">Wren:IG</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../wrenig/latest/index.html">5.x.x</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../docs/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Wren:IDM</a></li>
+    <li>Deployment Guide</li>
+    <li><a href="upgrade.html">Upgrade Guide</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">7.x.x-dev</button>
+  <div class="version-menu">
+    <a class="version is-current" href="upgrade.html">7.x.x-dev</a>
+    <a class="version is-missing" href="../../latest/index.html">6.x.x</a>
+  </div>
+</div>
+<div class="edit-this-page"><a href="https://github.com/WrenSecurity/wrenidm-docs/edit/main/modules/deployment/pages/upgrade.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Upgrade Guide</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This guide provides instructions for upgrading Wren:IDM to the new version.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wrenidm_7"><a class="anchor" href="#_wrenidm_7"></a>Wren:IDM 7</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you are upgrading to the Wren:IDM 7, please follow the steps below.</p>
+</div>
+<div class="sect2">
+<h3 id="_migrate_workflows"><a class="anchor" href="#_migrate_workflows"></a>Migrate Workflows</h3>
+<div class="paragraph">
+<p>The workflow engine was migrated from Activiti to Flowable, so the process definitions also needed to be migrated.
+Follow these steps to migrate your workflows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Perform database backup</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>Dump all tables with the prefix <code>act_</code> from the Wren:IDM database.
+Refer to your database documentation for information on dumping database data.</p>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Migrate process definitions</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>Update your BPMN process definitions and all associated files (such as HTML forms) to use Flowable annotations.
+See <a href="https://www.flowable.com/open-source/docs/bpmn/ch02-GettingStarted" target="_blank" rel="noopener">Flowable</a> documentation for more information.</p>
+</div>
+<div class="exampleblock">
+<div class="title">Example 1. Process execution listener migration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;!-- Before --&gt;
+&lt;definitions xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.activiti.org/test"&gt;
+  &lt;process id="userRole" name="User Role Assignment" isExecutable="true"&gt;
+    &lt;extensionElements&gt;
+      &lt;activiti:executionListener event="start" class="org.activiti.engine.impl.bpmn.listener.ScriptExecutionListener"&gt;
+        &lt;activiti:field name="script"&gt;
+          &lt;activiti:string&gt;
+            execution.setVariable('status', 'RUNNING')
+          &lt;/activiti:string&gt;
+        &lt;/activiti:field&gt;
+        &lt;activiti:field name="language" stringValue="groovy" /&gt;
+      &lt;/activiti:executionListener&gt;
+...
+&lt;!-- After --&gt;
+&lt;definitions xmlns:flowable="http://flowable.org/bpmn" targetNamespace="http://www.flowable.org/processdef"&gt;
+  &lt;process id="userRole" name="User Role Assignment" isExecutable="true"&gt;
+    &lt;extensionElements&gt;
+      &lt;flowable:executionListener event="start" class="org.flowable.engine.impl.bpmn.listener.ScriptExecutionListener"&gt;
+        &lt;flowable:field name="script"&gt;
+          &lt;flowable:string&gt;
+            execution.setVariable('status', 'RUNNING')
+          &lt;/flowable:string&gt;
+        &lt;/flowable:field&gt;
+        &lt;flowable:field name="language" stringValue="groovy" /&gt;
+      &lt;/flowable:executionListener&gt;
+...</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>Migrate running process instances</p>
+<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>Get identifiers of all running process instances:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl \
+--header "X-OpenIDM-Username: openidm-admin" \
+--header "X-OpenIDM-Password: openidm-admin" \
+--request GET \
+"http://localhost:8080/openidm/workflow/processinstance?_queryId=query-all-ids&amp;_fields=id,processDefinitionId&amp;_prettyPrint=true"
+{
+  "result" : [{
+    "_id" : "1",
+    "processDefinitionId" : "userRole:1:50"
+  }, {
+    "_id" : "2",
+    "processDefinitionId" : "userRole:2:100"
+  } ],
+  ...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Migrate all process instances to the latest process definitions:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl \
+  --header "X-OpenIDM-Username: openidm-admin" \
+  --header "X-OpenIDM-Password: openidm-admin" \
+  --request POST \
+  "http://localhost:8080/openidm/workflow/processinstance/1?_action=migrate"
+{"Successfully migrated process instance":"1"}
+
+curl \
+  --header "X-OpenIDM-Username: openidm-admin" \
+  --header "X-OpenIDM-Password: openidm-admin" \
+  --request POST \
+  "http://localhost:8080/openidm/workflow/processinstance/2?_action=migrate"
+{"Successfully migrated process instance":"2"}
+...</code></pre>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_migrate_to_hikaricp_jdbc_connection_pool"><a class="anchor" href="#_migrate_to_hikaricp_jdbc_connection_pool"></a>Migrate to HikariCP JDBC connection pool</h3>
+<div class="paragraph">
+<p>Support for the deprecated BoneCP JDBC connection pool has been completely removed.
+If your project is still using BoneCP, please migrate to HikariCP.</p>
+</div>
+<div class="exampleblock">
+<div class="title">Example 2. HikariCP JDBC connection pool configuration</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "driverClass" : "org.postgresql.Driver",
+  "jdbcUrl" : "jdbc:postgresql://&amp;{openidm.repo.host}:&amp;{openidm.repo.port}/idmdb",
+  "username" : "wrenidm",
+  "password" : "wrenidm",
+  "connectionTimeout" : 30000,
+  "connectionPool" : {
+    "type" : "hikari",
+    "minimumIdle" : 20,
+    "maximumPoolSize" : 50
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Migrate configuration property (<code>config.properties</code>) to enable JDBC health monitoring:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-diff hljs" data-lang="diff">- # enables the statistics MBean for BoneCP. Enabling this will have a performance impact on BoneCP.
+- openidm.bonecp.statistics.enabled=false
+
++ # Enables HikariCP MBean (JMX) monitoring
++ wrenidm.hikaricp.statistics.enabled=false</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>Copyright © 2017-<script>document.write(new Date().getFullYear());</script> Wren Security. Except where noted otherwise, the content is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license.</p>
+  <p>This page was built using an adapted version of the Antora default UI.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
