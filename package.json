@@ -5,7 +5,7 @@
         "url": "https://github.com/WrenSecurity/docs.wrensecurity.org.git"
     },
     "devDependencies": {
-        "@antora/cli": "3.1.4",
-        "@antora/site-generator": "3.1.4"
+        "@antora/cli": "3.1.14",
+        "@antora/site-generator": "3.1.14"
     }
 }
